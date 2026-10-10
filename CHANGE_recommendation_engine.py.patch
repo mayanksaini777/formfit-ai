@@ -1,0 +1,230 @@
+--- recommendation_engine.py (before)
++++ recommendation_engine.py (after)
+@@ -373,87 +373,168 @@
+     }
+ 
+ 
++def resolve_split_names(split_choice, days):
++    """
++    Return exactly `days` training-day names for the user's selected split.
++
++    `auto` preserves the previous adaptive behavior. Explicit splits are
++    cycled/truncated to fit 1–7 training days so the UI choice never creates
++    an invalid plan length.
++    """
++    split = normalize(split_choice or "auto")
++
++    if split in {"", "auto", "ai", "let formfit decide"}:
++        if days == 1:
++            return ["Full Body"]
++        if days == 2:
++            return ["Full Body A", "Full Body B"]
++        if days == 3:
++            return ["Full Body", "Full Body", "Full Body"]
++        if days == 4:
++            return ["Upper Body", "Lower Body", "Upper Body", "Lower Body"]
++        if days == 5:
++            return ["Upper Body", "Lower Body", "Push", "Pull", "Legs"]
++        return [
++            "Push", "Pull", "Legs",
++            "Upper Body", "Lower Body",
++            "Full Body", "Conditioning",
++        ]
++
++    patterns = {
++        "push_pull_legs": ["Push", "Pull", "Legs"],
++        "full_body": ["Full Body"],
++        "upper_lower": ["Upper Body", "Lower Body"],
++        "one_body_part": [
++            "Chest", "Back", "Shoulders", "Arms", "Legs",
++        ],
++        "bro_split": [
++            "Chest", "Back", "Shoulders", "Arms", "Legs",
++        ],
++    }
++
++    pattern = patterns.get(split)
++    if not pattern:
++        return resolve_split_names("auto", days)
++
++    return [pattern[i % len(pattern)] for i in range(days)]
++
++
++def split_target_muscles(split_name):
++    split = normalize(split_name)
++
++    if split == "push":
++        return [
++            "Chest",
++            "Shoulders",
++            "Triceps",
++        ]
++
++    if split == "pull":
++        return [
++            "Back",
++            "Biceps",
++            "Rear Deltoids",
++        ]
++
++    if split == "legs":
++        return [
++            "Quadriceps",
++            "Hamstrings",
++            "Glutes",
++            "Calves",
++        ]
++
++    if split == "upper body":
++        return [
++            "Chest",
++            "Back",
++            "Shoulders",
++            "Biceps",
++            "Triceps",
++        ]
++
++    if split == "lower body":
++        return [
++            "Quadriceps",
++            "Hamstrings",
++            "Glutes",
++            "Calves",
++        ]
++
++    if split == "chest":
++        return [
++            "Chest",
++        ]
++
++    if split == "back":
++        return [
++            "Back",
++        ]
++
++    if split == "shoulders":
++        return [
++            "Shoulders",
++        ]
++
++    if split == "arms":
++        return [
++            "Biceps",
++            "Triceps",
++            "Forearms",
++        ]
++
++    if split == "full body" or split in {"full body a", "full body b"}:
++        return [
++            "Chest",
++            "Back",
++            "Shoulders",
++            "Biceps",
++            "Triceps",
++            "Quadriceps",
++            "Hamstrings",
++            "Glutes",
++            "Calves",
++        ]
++
++    return None
++
++
+ def build_weekly_plan(profile):
+     days = int(profile.get("days_per_week", 3))
+     days = max(1, min(7, days))
+ 
+-    # Simple split. This is deliberately transparent and can later
+-    # be upgraded with a richer periodization model.
+-    if days == 1:
+-        names = ["Full Body"]
+-    elif days == 2:
+-        names = ["Full Body A", "Full Body B"]
+-    elif days == 3:
+-        names = ["Full Body", "Full Body", "Full Body"]
+-    elif days == 4:
+-        names = [
+-            "Upper Body",
+-            "Lower Body",
+-            "Upper Body",
+-            "Lower Body",
+-        ]
+-    elif days == 5:
+-        names = [
+-            "Upper Body",
+-            "Lower Body",
+-            "Push",
+-            "Pull",
+-            "Legs",
+-        ]
+-    else:
+-        names = [
+-            "Push",
+-            "Pull",
+-            "Legs",
+-            "Upper Body",
+-            "Lower Body",
+-            "Full Body",
+-            "Conditioning",
+-        ]
++    split_choice = normalize(profile.get("split", "auto"))
++    names = resolve_split_names(split_choice, days)
+ 
+     plan = []
+ 
+     for i in range(days):
+         day_profile = dict(profile)
++        split_name = names[i]
+ 
+         # Split-specific target hints.
+-        split = normalize(names[i])
+-
+-        if "upper" in split or split == "push":
+-            day_profile["target_muscles"] = [
+-                "Chest",
+-                "Back",
+-                "Shoulders",
+-                "Biceps",
+-                "Triceps",
+-            ]
+-        elif "lower" in split or split == "legs":
+-            day_profile["target_muscles"] = [
+-                "Quadriceps",
+-                "Hamstrings",
+-                "Glutes",
+-                "Calves",
+-            ]
+-        elif split == "pull":
+-            day_profile["target_muscles"] = [
+-                "Back",
+-                "Biceps",
+-                "Rear Deltoids",
+-            ]
+-        elif split == "conditioning":
++        target_muscles = split_target_muscles(split_name)
++        if target_muscles:
++            day_profile["target_muscles"] = target_muscles
++
++        if normalize(split_name) == "conditioning":
+             day_profile["goal"] = "conditioning"
+ 
+         plan.append(
+             build_day(
+                 day_profile,
+                 i + 1,
+-                names[i],
++                split_name,
+             )
+         )
+ 
+     return {
+         "plan_name": "FORMFIT AI Personalized Plan",
+-        "profile": profile,
++        "profile": {
++            **profile,
++            "split": split_choice or "auto",
++        },
++        "split": split_choice or "auto",
+         "days_per_week": days,
+         "days": plan,
+         "note": (

@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "principles": {
+    "rep_requires": ["exercise_position", "movement_direction", "minimum_rom", "return_to_start"],
+    "unknown_policy": "do_not_penalize_unobservable",
+    "pose_loss_policy": "no_score_penalty_no_rep"
+  },
+  "exercises": {
+    "bicep_curls": {
+      "family": "curl",
+      "setup": {"stance": "stable", "torso": "upright", "upper_arm": "near_torso"},
+      "observable": ["elbow_angle", "upper_arm_verticality", "wrist_height", "shoulder_elbow_drift", "torso_lean"],
+      "invalid": {"elbow_above_shoulder": 0.05, "wrist_above_shoulder": 0.08, "elbow_drift_ratio": 0.55, "torso_lean_deg": 28},
+      "rom": {"min_deg": 55, "target_deg": 105},
+      "rep": {"start_max_elbow": 150, "peak_max_elbow": 70, "return_min_elbow": 125},
+      "segments": ["left_arm", "right_arm", "torso"],
+      "coaching": {"elbow_above_shoulder": "Keep the elbow below shoulder height.", "wrist_above_shoulder": "Do not lift the hand above the shoulder during the curl.", "elbow_drift": "Keep the upper arm close to your torso.", "torso_lean": "Keep your torso still; avoid swinging."}
+    },
+    "hammer_curl": {"inherits": "bicep_curls"},
+    "tricep_extension": {
+      "family": "arm_extension", "observable": ["elbow_angle", "elbow_height", "torso_lean"],
+      "invalid": {"elbow_above_shoulder": 0.18, "torso_lean_deg": 30}, "rom": {"min_deg": 45, "target_deg": 100},
+      "segments": ["left_arm", "right_arm", "torso"]
+    },
+    "shoulder_press": {
+      "family": "vertical_press", "observable": ["wrist_above_shoulder", "elbow_stack", "torso_lean"],
+      "invalid": {"torso_lean_deg": 28, "wrist_x_offset_ratio": 0.65}, "rom": {"min_deg": 55, "target_deg": 105},
+      "segments": ["left_arm", "right_arm", "torso"]
+    },
+    "lateral_shoulder_raises": {
+      "family": "lateral_raise", "observable": ["wrist_height", "elbow_height", "torso_lean"],
+      "invalid": {"wrist_above_head": 0.12, "torso_lean_deg": 25}, "rom": {"min_deg": 45, "target_deg": 90},
+      "segments": ["left_arm", "right_arm", "torso"]
+    },
+    "front_raise": {
+      "family": "front_raise", "observable": ["wrist_height", "torso_lean"],
+      "invalid": {"wrist_above_head": 0.15, "torso_lean_deg": 25}, "rom": {"min_deg": 45, "target_deg": 90},
+      "segments": ["left_arm", "right_arm", "torso"]
+    },
+    "squat": {
+      "family": "squat", "observable": ["knee_angle", "knee_to_ankle_x", "hip_depth", "torso_lean"],
+      "invalid": {"knee_drift_px_ratio": 0.14, "torso_lean_deg": 55}, "rom": {"min_deg": 35, "target_deg": 70},
+      "segments": ["left_leg", "right_leg", "left_torso", "right_torso"]
+    },
+    "lunges": {"inherits": "squat"},
+    "reverse_lunge": {"inherits": "squat"},
+    "step_up": {"inherits": "squat"},
+    "calf_raise": {
+      "family": "calf_raise", "observable": ["ankle_y", "knee_stability", "torso_lean"],
+      "invalid": {"torso_lean_deg": 30}, "rom": {"min_deg": 12, "target_deg": 30},
+      "segments": ["left_leg", "right_leg", "left_torso", "right_torso"]
+    },
+    "deadlift": {
+      "family": "hinge", "observable": ["hip_hinge", "spine_line", "knee_angle", "shoulder_hip_relation"],
+      "invalid": {"torso_lean_deg": 70, "knee_drift_px_ratio": 0.18}, "rom": {"min_deg": 25, "target_deg": 65},
+      "segments": ["left_leg", "right_leg", "left_torso", "right_torso"]
+    },
+    "dumbbell_row": {
+      "family": "row", "observable": ["hip_hinge", "elbow_path", "torso_lean"],
+      "invalid": {"torso_lean_min_deg": 18, "torso_lean_max_deg": 70}, "rom": {"min_deg": 40, "target_deg": 90},
+      "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]
+    },
+    "lat_pulldown": {
+      "family": "vertical_pull", "observable": ["elbow_path", "torso_lean", "wrist_height"],
+      "invalid": {"torso_lean_deg": 30}, "rom": {"min_deg": 45, "target_deg": 100},
+      "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]
+    },
+    "close_grip_lat_pulldown": {"inherits": "lat_pulldown"},
+    "push_up": {
+      "family": "horizontal_push", "position": "floor_horizontal", "observable": ["body_line", "elbow_angle", "hip_sag", "hip_pike"],
+      "invalid": {"body_line_min_deg": 150}, "rom": {"min_deg": 35, "target_deg": 85},
+      "segments": ["left_arm", "right_arm", "left_torso", "right_torso", "left_leg", "right_leg"]
+    },
+    "push_up_wide_grip": {"inherits": "push_up"},
+    "push_up_diamond": {"inherits": "push_up"},
+    "incline_push_up": {"inherits": "push_up"},
+    "decline_push_up": {"inherits": "push_up"},
+    "plank": {
+      "family": "isometric_floor", "position": "floor_horizontal", "observable": ["body_line", "hip_sag", "hip_pike"],
+      "invalid": {"body_line_min_deg": 155}, "segments": ["left_torso", "right_torso", "left_leg", "right_leg"]
+    },
+    "glute_bridge": {
+      "family": "bridge", "position": "floor_supine", "observable": ["hip_extension", "knee_angle", "torso_line"],
+      "segments": ["left_leg", "right_leg", "left_torso", "right_torso"]
+    },
+    "sit_up": {
+      "family": "trunk_flexion", "position": "floor_supine", "observable": ["trunk_angle", "hip_angle"],
+      "segments": ["left_torso", "right_torso"]
+    },
+    "mountain_climber": {"family": "dynamic_floor", "position": "floor_horizontal", "segments": ["left_arm", "right_arm", "left_leg", "right_leg", "left_torso", "right_torso"]},
+    "burpee": {"family": "dynamic_full_body", "segments": ["left_arm", "right_arm", "left_leg", "right_leg", "left_torso", "right_torso"]},
+    "bench_press": {"family": "horizontal_press", "position": "floor_supine", "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]},
+    "incline_dumbbell_press": {"inherits": "bench_press"},
+    "decline_bench_press": {"inherits": "bench_press"},
+    "incline_bench_press": {"inherits": "bench_press"},
+    "dumbbell_bench_press": {"inherits": "bench_press"},
+    "close_grip_bench_press": {"inherits": "bench_press"},
+    "chest_press_machine": {"family": "horizontal_press", "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]},
+    "chest_fly": {"family": "horizontal_fly", "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]},
+    "cable_crossover": {"family": "horizontal_fly", "segments": ["left_arm", "right_arm", "left_torso", "right_torso"]},
+    "low_cable_crossover": {"inherits": "cable_crossover"}
+  }
+}

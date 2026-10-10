@@ -1,0 +1,21 @@
+FORMFIT ALL EXERCISES FORM ENGINE V6 — SAFETY AUDIT
+
+Scope:
+- pose_engine.py: runtime registry expanded from the existing 34 explicit rules to all 154 database exercises. Existing dedicated analyzers remain untouched and are preferred; additional variants are routed to equivalent tested analyzers where valid, with conservative generic geometry for remaining moves.
+- app.js: valid runtime-supported exercises are no longer blocked solely by stale COMING_SOON metadata; those cards display AI FORM • ADAPTIVE.
+
+Validation:
+- Python compile: PASS
+- JavaScript syntax: PASS
+- Runtime routing test: 154/154 exercises, no exceptions
+- RepCounter smoke test: 154/154 exercises, no exceptions
+- Database exercise count: 154
+- Runtime exercise IDs missing: 0
+
+Preserved:
+- Established dedicated analyzers
+- Existing smoothing / stability / camera pipeline
+- Existing API/auth/history/diet/workout code (except the exercise-open gate in app.js)
+
+Important:
+The 120 previously COMING_SOON exercises now have conservative runtime support, but they should not be described as equally precise to the dedicated analyzers until exercise-by-exercise video validation is completed.

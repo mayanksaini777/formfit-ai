@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMFIT AI — Smart Workout & Form Coach</title>
+  <meta name="description" content="AI-powered personalized workout planning and exercise form coaching.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">F</div>
+        <div>
+          <div class="brand-name">FORMFIT</div>
+          <div class="brand-sub">AI FITNESS COACH</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-item active" data-view="home">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-view="recommend">✦ <span>AI Workout</span></button>
+        <button class="nav-item" data-view="winterArc">❄ <span>Winter Arc</span></button>
+        <button class="nav-item" data-view="meal">🥗 <span>Meal Plan</span></button>
+        <button class="nav-item" data-view="performance">🛡 <span>Supplements</span></button>
+        <button class="nav-item" data-view="form">◎ <span>Form Checker</span></button>
+        <button class="nav-item" data-view="history">◷ <span>My History</span></button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="tiny-label">YOUR COACH</span>
+        <strong>Train smarter.</strong>
+        <p>Build a plan around your goal, experience and equipment.</p>
+      </div>
+
+      <div class="account-card">
+        <div class="account-avatar" id="accountAvatar">U</div>
+        <div class="account-info"><span id="accountEmail">Not signed in</span><small>Personal account</small></div>
+        <button class="logout-btn" id="logoutBtn" title="Log out">↪</button>
+      </div>
+      <div class="sidebar-footer">FORMFIT AI • v1.0</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">AI FITNESS PLATFORM</span>
+          <h1 id="pageTitle">Train with better form.</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="quickLibrary">Browse exercises</button>
+          <button class="primary-btn" id="quickAI">Build my workout <span>→</span></button>
+        </div>
+      <button class="account-btn" id="accountBtn" type="button">ACCOUNT</button>
+</header>
+
+      <section id="homeView" class="view active-view">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="pill">SMART • PERSONAL • FORM-FIRST</span>
+            <h2>Your workout.<br><em>Built around you.</em></h2>
+            <p>Get a personalized workout plan and practice each exercise with clear form guidance, correction cues and rep tracking.</p>
+            <div class="hero-actions">
+              <button class="primary-btn big" data-view="recommend">✦ Build my workout</button>
+              <button class="secondary-btn big" data-view="library">Choose an exercise</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="pose-card">
+              <div class="pose-head"></div>
+              <div class="pose-body"></div>
+              <div class="pose-limb l1"></div>
+              <div class="pose-limb l2"></div>
+              <div class="pose-limb l3"></div>
+              <div class="pose-limb l4"></div>
+              <span class="pose-dot d1"></span><span class="pose-dot d2"></span>
+              <span class="pose-dot d3"></span><span class="pose-dot d4"></span>
+              <div class="pose-status">● FORM READY</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card"><span>EXERCISE LIBRARY</span><strong id="exerciseCount">—</strong><small>available to explore</small></div>
+          <div class="stat-card"><span>AI FORM CHECK</span><strong>10</strong><small>tested exercises</small></div>
+          <div class="stat-card"><span>MODES</span><strong>02</strong><small>AI plan + manual</small></div>
+          <div class="stat-card"><span>COACHING</span><strong>24/7</strong><small>visual correction cues</small></div>
+        </div>
+
+        <div class="section-head">
+          <div><span class="eyebrow">HOW IT WORKS</span><h3>One platform. Two ways to train.</h3></div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="feature-num">01</div><h4>AI builds your plan</h4><p>Tell us your goal, experience, schedule and equipment. The recommendation engine builds a balanced plan.</p></div>
+          <div class="feature-card"><div class="feature-num">02</div><h4>You choose the exercise</h4><p>Prefer control? Search the exercise library and select exactly what you want to practice.</p></div>
+          <div class="feature-card"><div class="feature-num">03</div><h4>Practice with form cues</h4><p>Use the form checker for supported exercises with green, red and yellow visual guidance.</p></div>
+        </div>
+      </section>
+
+      <section id="recommendView" class="view">
+        <div class="section-head"><div><span class="eyebrow">PERSONALIZED TRAINING</span><h2>Build your workout.</h2><p>Give the coach a few details. It will score exercises from the library and create a weekly plan.</p></div></div>
+        <form id="recommendForm" class="form-card">
+          <div class="form-section">
+            <label>Your goal</label>
+            <div class="choice-grid">
+              <button type="button" class="choice selected" data-field="goal" data-value="muscle gain">Muscle gain</button>
+              <button type="button" class="choice" data-field="goal" data-value="strength">Strength</button>
+              <button type="button" class="choice" data-field="goal" data-value="fat loss">Fat loss</button>
+              <button type="button" class="choice" data-field="goal" data-value="general fitness">General fitness</button>
+              <button type="button" class="choice" data-field="goal" data-value="mobility">Mobility</button>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-section"><label>Experience</label><select id="experience"><option>beginner</option><option>intermediate</option><option>advanced</option></select></div>
+            <div class="form-section"><label>Days per week</label><input id="days" type="number" min="1" max="7" value="3"></div>
+            <div class="form-section"><label>Exercises / day</label><input id="perDay" type="number" min="3" max="10" value="6"></div>
+          </div>
+          <div class="form-section">
+            <label for="workoutSplit">Choose your workout split</label>
+            <select id="workoutSplit">
+              <option value="auto">Let FormFit decide (recommended)</option>
+              <option value="push_pull_legs">Push • Pull • Legs</option>
+              <option value="full_body">Full Body</option>
+              <option value="upper_lower">Upper • Lower</option>
+              <option value="one_body_part">One body part a day</option>
+              <option value="bro_split">Chest • Back • Shoulders • Arms • Legs</option>
+            </select>
+            <small>FormFit will adapt the split to your selected training days.</small>
+          </div>
+          <div class="form-section">
+            <label>Available equipment</label>
+            <small>Select only the equipment you actually have. FormFit will not assume Bodyweight.</small>
+            <div class="choice-grid compact" id="equipmentChoices">
+              <button type="button" class="choice" data-value="Bodyweight">Bodyweight</button>
+              <button type="button" class="choice" data-value="Dumbbells">Dumbbells</button>
+              <button type="button" class="choice" data-value="Barbell">Barbell</button>
+              <button type="button" class="choice" data-value="Cable">Cable</button>
+              <button type="button" class="choice" data-value="Machine">Machine</button>
+              <button type="button" class="choice" data-value="Resistance Band">Resistance Band</button>
+              <button type="button" class="choice" data-value="Kettlebell">Kettlebell</button>
+              <button type="button" class="choice" data-value="Bench">Bench</button>
+            </div>
+          </div>
+          <button class="primary-btn big submit-btn" type="submit">Generate my plan <span>→</span></button>
+        </form>
+        <div id="planResult" class="plan-result"></div>
+      </section>
+
+
+      <section id="winterArcView" class="view">
+        <div class="winter-arc-hero">
+          <div>
+            <span class="pill">SEASONAL RESET • OCT 1 → JAN 1</span>
+            <h2>Winter Arc.<br><em>Lock in before the new year.</em></h2>
+            <p>Build a realistic 90-day routine around training, food, recovery and consistency. Winter Arc is a social-media self-improvement concept, not a fixed medical or fitness protocol.</p>
+          </div>
+          <div class="winter-arc-badge">
+            <span>YOUR ARC</span>
+            <strong id="winterArcDays">92</strong>
+            <small>days</small>
+          </div>
+        </div>
+
+        <div class="winter-arc-grid">
+          <article class="winter-info-card winter-info-main">
+            <span class="eyebrow">WHAT THIS IS</span>
+            <h3>The smart version of Winter Arc</h3>
+            <p>Use the season to build habits you can actually keep after January. FormFit focuses on progressive training, enough food, sleep, recovery and repeatable routines—not punishment.</p>
+            <div class="winter-principles">
+              <div><b>Train</b><span>Strength + conditioning matched to your split, level and equipment.</span></div>
+              <div><b>Fuel</b><span>Personalized meals that support your selected goal and food preferences.</span></div>
+              <div><b>Recover</b><span>Rest days, sleep and manageable volume are part of the plan.</span></div>
+              <div><b>Repeat</b><span>Consistency beats extreme rules that collapse after a week.</span></div>
+            </div>
+          </article>
+
+          <article class="winter-info-card">
+            <span class="eyebrow">DO</span>
+            <h3>What to do</h3>
+            <ul class="winter-list good">
+              <li>Follow a repeatable training schedule.</li>
+              <li>Keep protein-rich, minimally processed foods in rotation.</li>
+              <li>Use walking/cardio to build baseline activity.</li>
+              <li>Keep a consistent sleep routine.</li>
+              <li>Track workouts and adjust from real performance.</li>
+            </ul>
+          </article>
+
+          <article class="winter-info-card">
+            <span class="eyebrow">DON'T</span>
+            <h3>What not to do</h3>
+            <ul class="winter-list bad">
+              <li>Do not treat exhaustion as progress.</li>
+              <li>Do not copy extreme influencer challenges blindly.</li>
+              <li>Do not remove food groups without a reason.</li>
+              <li>Do not train hard every day just to keep a streak.</li>
+              <li>Do not sacrifice sleep for early-morning “grind”.</li>
+            </ul>
+          </article>
+        </div>
+
+        <form id="winterArcForm" class="winter-builder">
+          <div class="section-head"><div><span class="eyebrow">BUILD YOUR ARC</span><h3>Tell FormFit what your winter is for.</h3><p>These choices control the workout split, training focus and meal-plan direction.</p></div></div>
+          <div class="winter-form-grid">
+            <div class="meal-field"><label for="winterGoal">MAIN GOAL</label><select id="winterGoal"><option value="muscle gain">Build muscle</option><option value="strength">Get stronger</option><option value="fat loss">Lose fat</option><option value="general fitness">Improve fitness</option><option value="mobility">Mobility + movement</option></select></div>
+            <div class="meal-field"><label for="winterReason">WHY THIS WINTER ARC?</label><select id="winterReason"><option value="physique">Improve my physique</option><option value="strength">Become stronger</option><option value="consistency">Build discipline and consistency</option><option value="fitness">Improve stamina and fitness</option><option value="sport">Support a sport or performance goal</option></select></div>
+            <div class="meal-field"><label for="winterSplit">TRAINING SPLIT</label><select id="winterSplit"><option value="auto">Let FormFit decide</option><option value="push_pull_legs">Push • Pull • Legs</option><option value="full_body">Full Body</option><option value="upper_lower">Upper • Lower</option><option value="one_body_part">One body part a day</option><option value="bro_split">Chest • Back • Shoulders • Arms • Legs</option></select></div>
+            <div class="meal-field"><label for="winterDays">TRAINING DAYS / WEEK</label><input id="winterDays" type="number" min="2" max="6" value="4"></div>
+            <div class="meal-field"><label for="winterMinutes">MINUTES / SESSION</label><input id="winterMinutes" type="number" min="20" max="120" value="60"></div>
+            <div class="meal-field"><label for="winterDietPreference">FOOD STYLE</label><select id="winterDietPreference"><option value="vegetarian">Vegetarian</option><option value="egg">Egg</option><option value="non_vegetarian">Non-Vegetarian</option></select></div>
+          </div>
+
+          <div class="form-section winter-equipment-block">
+            <label>AVAILABLE EQUIPMENT</label>
+            <small>Select only what you actually have. Winter Arc will not silently add Bodyweight.</small>
+            <div class="choice-grid compact" id="winterEquipmentChoices">
+              <button type="button" class="choice" data-winter-equipment="Bodyweight">Bodyweight</button>
+              <button type="button" class="choice" data-winter-equipment="Dumbbells">Dumbbells</button>
+              <button type="button" class="choice" data-winter-equipment="Barbell">Barbell</button>
+              <button type="button" class="choice" data-winter-equipment="Cable">Cable</button>
+              <button type="button" class="choice" data-winter-equipment="Machine">Machine</button>
+              <button type="button" class="choice" data-winter-equipment="Resistance Band">Resistance Band</button>
+              <button type="button" class="choice" data-winter-equipment="Kettlebell">Kettlebell</button>
+              <button type="button" class="choice" data-winter-equipment="Bench">Bench</button>
+            </div>
+          </div>
+
+          <div class="winter-habits">
+            <div><b>Daily Arc rules</b><span>Choose the habits you want FormFit to keep visible.</span></div>
+            <label><input type="checkbox" name="winterHabit" value="training" checked> Complete scheduled training / active recovery</label>
+            <label><input type="checkbox" name="winterHabit" value="protein" checked> Hit your nutrition target</label>
+            <label><input type="checkbox" name="winterHabit" value="steps" checked> Get regular daily movement</label>
+            <label><input type="checkbox" name="winterHabit" value="sleep" checked> Protect your sleep routine</label>
+            <label><input type="checkbox" name="winterHabit" value="screen"> Add a screen-free / reading block</label>
+          </div>
+
+          <button class="primary-btn big submit-btn" type="submit">Build my Winter Arc <span>→</span></button>
+        </form>
+
+        <div id="winterArcResult" class="winter-result"></div>
+      </section>
+
+      <section id="mealView" class="view">
+        <div class="section-head meal-head">
+          <div>
+            <span class="eyebrow">PERSONALIZED INDIAN NUTRITION</span>
+            <h2>Build your meal plan.</h2>
+            <p>Tell FormFit your age, weight, goal and food preference. You will receive one practical Indian plan matched to those selections.</p>
+          </div>
+        </div>
+
+        <form id="mealPlanForm" class="meal-form-card">
+          <div class="meal-form-grid">
+            <div class="meal-field">
+              <label for="mealAge">AGE</label>
+              <input id="mealAge" type="number" min="16" max="80" inputmode="numeric" placeholder="e.g. 20" required>
+              <small>Enter age in years.</small>
+            </div>
+            <div class="meal-field">
+              <label for="mealHeight">HEIGHT (CM)</label>
+              <input id="mealHeight" type="number" min="130" max="230" step="0.1" inputmode="decimal" placeholder="e.g. 175" required>
+              <small>Used to calculate BMI and fine-tune the calorie target.</small>
+            </div>
+            <div class="meal-field">
+              <label for="mealWeight">WEIGHT (KG)</label>
+              <input id="mealWeight" type="number" min="35" max="200" step="0.1" inputmode="decimal" placeholder="e.g. 65" required>
+              <small>Current body weight.</small>
+            </div>
+          </div>
+
+          <div id="mealBmiPreview" class="meal-bmi-preview" aria-live="polite">
+            <span>BMI</span><strong>—</strong><small>Enter height + weight to calculate</small>
+          </div>
+
+          <div class="meal-choice-section">
+            <label>GOAL</label>
+            <div class="meal-choice-grid" id="mealGoalChoices">
+              <button type="button" class="meal-choice selected" data-meal-field="goal" data-value="bulking">
+                <strong>Bulking</strong><span>Calorie surplus + carbs</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="muscle_gain">
+                <strong>Muscle Gain</strong><span>High protein + balanced</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="cutting">
+                <strong>Cutting</strong><span>Controlled calories + filling foods</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="muscle_loss">
+                <strong>Muscle Loss</strong><span>Deficit + high protein</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="maintaining">
+                <strong>Maintaining</strong><span>Balanced everyday intake</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="meal-choice-section">
+            <label>FOOD PREFERENCE</label>
+            <div class="meal-choice-grid meal-preference-grid" id="mealPreferenceChoices">
+              <button type="button" class="meal-choice selected" data-meal-field="preference" data-value="vegetarian">
+                <strong>Vegetarian</strong><span>Dal • paneer • curd • soy</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="preference" data-value="egg">
+                <strong>Egg</strong><span>Vegetarian foods + eggs</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="preference" data-value="non_vegetarian">
+                <strong>Non-Vegetarian</strong><span>Chicken • eggs • fish</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="meal-choice-section">
+            <label>WORKOUT TIME</label>
+            <div class="meal-choice-grid meal-workout-time-grid" id="mealWorkoutTimeChoices">
+              <button type="button" class="meal-choice" data-meal-field="workoutTime" data-value="morning">
+                <strong>Morning</strong><span>Build meals around morning training</span>
+              </button>
+              <button type="button" class="meal-choice selected" data-meal-field="workoutTime" data-value="evening">
+                <strong>Evening</strong><span>Build meals around evening training</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="workoutTime" data-value="night">
+                <strong>Night</strong><span>Build meals around night training</span>
+              </button>
+            </div>
+            <small class="meal-workout-time-help">FormFit will place selected supplements into the most relevant pre-workout, post-workout or main meal slot.</small>
+          </div>
+
+          <div class="meal-choice-section diet-supplement-selector">
+            <label>SUPPLEMENTS IN MY DIET</label>
+            <div class="meal-choice-grid meal-supplement-mode-grid" id="mealSupplementModeChoices">
+              <button type="button" class="meal-choice selected" data-meal-field="supplementMode" data-value="none">
+                <strong>Food Only</strong><span>No supplements in my plan</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="supplementMode" data-value="use">
+                <strong>Use Supplements</strong><span>Choose exactly what I want</span>
+              </button>
+            </div>
+            <div id="mealSupplementOptions" class="meal-supplement-options" hidden>
+              <div class="diet-supplement-options-head">
+                <div><strong>Choose your supplements</strong><small>Only the ones you select will appear in your diet plan.</small></div>
+                <span id="mealSupplementCount">0 selected</span>
+              </div>
+              <div class="diet-supplement-check-grid">
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="protein_powder"><span class="supplement-check-body"><img src="assets/supplements/protein-powder.svg" alt="Protein Powder" loading="lazy"><span><b>Protein Powder</b><small>Protein support</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="creatine"><span class="supplement-check-body"><img src="assets/supplements/creatine.svg" alt="Creatine Monohydrate" loading="lazy"><span><b>Creatine Monohydrate</b><small>Training support</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="multivitamin"><span class="supplement-check-body"><img src="assets/supplements/multivitamin.svg" alt="Multivitamin" loading="lazy"><span><b>Multivitamin</b><small>Micronutrient support</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="omega3"><span class="supplement-check-body"><img src="assets/supplements/omega3.svg" alt="Omega-3 / Fish Oil" loading="lazy"><span><b>Omega-3 / Fish Oil</b><small>EPA + DHA source</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="vitamin_d"><span class="supplement-check-body"><img src="assets/supplements/vitamin-d3.svg" alt="Vitamin D3" loading="lazy"><span><b>Vitamin D3</b><small>Use when appropriate</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="electrolytes"><span class="supplement-check-body"><img src="assets/supplements/electrolytes.svg" alt="Electrolytes" loading="lazy"><span><b>Electrolytes</b><small>Long/sweaty sessions</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="caffeine"><span class="supplement-check-body"><img src="assets/supplements/caffeine.svg" alt="Caffeine" loading="lazy"><span><b>Caffeine</b><small>Pre-workout option</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+                <label class="diet-supplement-check"><input type="checkbox" data-supplement-check value="beta_alanine"><span class="supplement-check-body"><img src="assets/supplements/beta-alanine.svg" alt="Beta-Alanine" loading="lazy"><span><b>Beta-Alanine</b><small>High-intensity support</small></span><i class="supplement-check-mark" aria-hidden="true">✓</i></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="diet-memory-card">
+            <div class="diet-memory-head">
+              <div>
+                <span class="eyebrow">YOUR FOOD DNA</span>
+                <h3>Teach FormFit what you actually enjoy.</h3>
+              </div>
+              <span class="diet-memory-badge" id="dietMemoryStatus">Ready to learn</span>
+            </div>
+            <div class="diet-memory-grid">
+              <div class="meal-field">
+                <label for="dietFavoriteFoods">FAVORITE FOODS</label>
+                <input id="dietFavoriteFoods" type="text" placeholder="e.g. paneer, poha, chicken">
+                <small>Foods you would happily eat again.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietDislikedFoods">DISLIKED FOODS</label>
+                <input id="dietDislikedFoods" type="text" placeholder="e.g. oats, tofu">
+                <small>Foods FormFit should reduce or replace.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietAvoidFoods">FOODS TO AVOID</label>
+                <input id="dietAvoidFoods" type="text" placeholder="e.g. peanuts, fish">
+                <small>Hard exclusions or foods you do not want suggested.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietStyleNote">MEAL STYLE</label>
+                <input id="dietStyleNote" type="text" placeholder="e.g. simple, spicy, quick to cook">
+                <small>Practical preferences FormFit should remember.</small>
+              </div>
+            </div>
+          </div>
+
+          <button class="primary-btn big submit-btn meal-generate-btn" type="submit">
+            Generate my Indian meal plan <span>→</span>
+          </button>
+        </form>
+
+        <div id="mealPlanResult" class="meal-plan-result" aria-live="polite"></div>
+        <section class="saved-diets-panel" aria-label="Saved diets">
+          <div class="saved-diets-head">
+            <div>
+              <span class="eyebrow">YOUR DIET LIBRARY</span>
+              <h3>Saved & favorite plans</h3>
+            </div>
+            <button type="button" class="ghost-btn" id="refreshSavedDiets">Refresh</button>
+          </div>
+          <div id="savedDietList" class="saved-diet-list">
+            <div class="saved-diet-empty">Generate a plan and save your favorite version here.</div>
+          </div>
+        </section>
+      </section>
+
+      <section id="performanceView" class="view">
+        <div class="section-head performance-head">
+          <div>
+            <span class="eyebrow">18+ • PERFORMANCE & SAFETY</span>
+            <h2>Supplements & Safety.</h2>
+            <p>Evidence-first guidance for training supplements and a safety-focused educational library for anabolic steroids, SARMs and other performance-enhancing drugs.</p>
+          </div>
+          <div class="performance-badge">18+ ONLY</div>
+        </div>
+
+        <div id="performanceGate" class="performance-gate">
+          <div class="performance-gate-icon">18+</div>
+          <div>
+            <span class="eyebrow">AGE & SAFETY GATE</span>
+            <h3>This section is for adults only.</h3>
+            <p>FormFit will ask for the minimum context needed to make supplement guidance safer. Health details stay in this page session and are not sent to the FormFit pose API.</p>
+          </div>
+          <button class="primary-btn" id="performanceStartBtn" type="button">I am 18+ • Continue</button>
+        </div>
+
+        <div id="performanceWorkspace" class="performance-workspace" hidden>
+          <div class="performance-warning">
+            <strong>Safety first:</strong> FormFit can explain benefits, evidence, interactions, side effects and anti-doping status. It will not generate steroid/SARM cycles, stacks, PCTs, injection instructions, or personalized drug doses.
+          </div>
+
+          <div class="performance-grid">
+            <form id="performanceProfile" class="form-card performance-profile-card">
+              <div class="performance-card-head"><div><span class="eyebrow">YOUR CONTEXT</span><h3>Build my safety profile</h3></div><span class="session-only">SESSION ONLY</span></div>
+              <div class="form-row">
+                <div class="form-section"><label for="perfAge">Age</label><input id="perfAge" type="number" min="18" max="100" placeholder="18+"></div>
+                <div class="form-section"><label for="perfSex">Sex / hormonal context</label><select id="perfSex"><option value="">Select</option><option>Male</option><option>Female</option><option>Other / prefer not to say</option></select></div>
+              </div>
+              <div class="form-row">
+                <div class="form-section"><label for="perfGoal">Primary goal</label><select id="perfGoal"><option>Muscle gain</option><option>Strength</option><option>Fat loss</option><option>Endurance</option><option>General fitness</option><option>Competition performance</option></select></div>
+                <div class="form-section"><label for="perfTraining">Training level</label><select id="perfTraining"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+              </div>
+              <div class="form-section"><label for="perfSport">Drug-tested competition?</label><select id="perfSport"><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></div>
+              <div class="form-section"><label>Safety flags <small>(select any that apply)</small></label><div class="choice-grid compact" id="perfSafetyFlags">
+                <button type="button" class="choice" data-flag="heart-bp">Heart / blood pressure</button>
+                <button type="button" class="choice" data-flag="liver">Liver</button>
+                <button type="button" class="choice" data-flag="kidney">Kidney</button>
+                <button type="button" class="choice" data-flag="cholesterol">Cholesterol / lipids</button>
+                <button type="button" class="choice" data-flag="mental">Mental health / sleep</button>
+                <button type="button" class="choice" data-flag="fertility">Fertility / hormones</button>
+                <button type="button" class="choice" data-flag="meds">Prescription medicines</button>
+                <button type="button" class="choice" data-flag="none">None known</button>
+              </div></div>
+              <div class="form-section"><label for="perfCurrentUse">Current use</label><textarea id="perfCurrentUse" rows="3" placeholder="Optional: list supplements or performance products you currently use. Do not enter prescriptions or private identifiers."></textarea></div>
+              <button class="primary-btn big" type="submit">Generate safe guidance <span>→</span></button>
+              <div id="performanceProfileResult" class="performance-profile-result" aria-live="polite"></div>
+            </form>
+
+            <aside class="performance-quick-card">
+              <span class="eyebrow">QUICK FILTER</span>
+              <h3>What do you want to know?</h3>
+              <div class="performance-tabs" id="performanceTabs">
+                <button class="performance-tab active" data-perf-tab="supplements">Supplements</button>
+                <button class="performance-tab" data-perf-tab="steroids">Steroids & PEDs</button>
+                <button class="performance-tab" data-perf-tab="redflags">Red flags</button>
+              </div>
+              <p id="performanceTabHint">Start with evidence-backed supplements, timing, common adult-use ranges and safety notes.</p>
+            </aside>
+          </div>
+
+          <div class="steroid-basics performance-intro" id="supplementBasics" data-perf-intro="supplements">
+            <div class="steroid-basics-head">
+              <div><span class="eyebrow">START HERE • BEGINNER FRIENDLY</span><h3>Supplements ko zero se samjho.</h3><p>Agar supplements ka bilkul idea nahi hai, pehle basics samjho. FormFit batayega supplement kya karta hai, kis goal mein useful ho sakta hai, timing kitni important hai, aur kaha marketing evidence se aage nikal jaati hai.</p></div>
+              <span class="pc-type">EDUCATION + SAFETY</span>
+            </div>
+            <div class="steroid-basics-grid">
+              <article><b>1. Supplement hota kya hai?</b><p>Supplement food aur nutrition ko support karta hai; ye normal diet, training aur sleep ka replacement nahi hai.</p></article>
+              <article><b>2. Har supplement zaroori nahi.</b><p>Creatine aur adequate protein jaise basics ka evidence strong ho sakta hai, jabki kuch products ka benefit limited ya mixed hota hai.</p></article>
+              <article><b>3. Timing vs total intake</b><p>Kuch products timing se benefit le sakte hain, lekin overall daily intake, consistency aur training context usually zyada important hote hain.</p></article>
+              <article><b>4. Goal ke hisaab se choose karo</b><p>Muscle gain, strength, endurance aur hydration ke liye same supplement list blindly use nahi karni chahiye.</p></article>
+              <article><b>5. Label aur safety</b><p>Ingredients, stimulant load, allergies, medicines aur health conditions check karo. “Natural” ya “test booster” likha hona safety proof nahi hai.</p></article>
+            </div>
+          </div>
+
+          <div class="steroid-basics performance-intro" id="steroidBasics" data-perf-intro="steroids" hidden>
+            <div class="steroid-basics-head">
+              <div><span class="eyebrow">START HERE • BEGINNER FRIENDLY</span><h3>Steroids ko zero se samjho.</h3><p>Agar tumhe steroids ke baare mein kuch bhi nahi pata, pehle ye 5 cheezein samjho. FormFit names, basic mechanism, reasons people use them, competition rules aur major risks explain karega — but cycle/dose nahi banayega.</p></div>
+              <span class="pc-type">EDUCATION ONLY</span>
+            </div>
+            <div class="steroid-basics-grid">
+              <article><b>1. Steroid hota kya hai?</b><p>Anabolic-androgenic steroids (AAS) testosterone se related synthetic hormones hain. “Anabolic” muscle/tissue-building effects ko aur “androgenic” male-sex-characteristic effects ko refer karta hai.</p></article>
+              <article><b>2. Body mein kaise kaam karte hain?</b><p>Most AAS androgen receptor ko activate karte hain. Isse gene signalling aur protein-building processes change hoti hain, jisse muscle protein synthesis aur training adaptation badh sakti hai. Saath hi natural hormone system suppress ho sakta hai.</p></article>
+              <article><b>3. Log kyun lete hain?</b><p>Kuch log appearance, muscle size, strength ya performance ke liye misuse karte hain. Social media comparison bhi motivation ho sakta hai, lekin photos genetics, lighting, dehydration, editing aur drug use ko hide kar sakti hain.</p></article>
+              <article><b>4. Competition mein?</b><p>Drug-tested sport mein anabolic agents major anti-doping concern hain. WADA ki 2026 list mein anabolic agents S1 ke under in- aur out-of-competition prohibited hain. Therapeutic use ke cases mein rules/TUE process alag ho sakta hai.</p></article>
+              <article><b>5. Biggest misconception</b><p>“Cycle/stack/PCT se safe ho jayega” proven safety guarantee nahi hai. Steroid misuse cardiovascular, liver, lipid, fertility/hormonal aur mental-health harms se linked hai.</p></article>
+            </div>
+            <div class="steroid-paths">
+              <div><strong>🏆 Competition path</strong><span>Anti-doping rules • prohibited substances • testing • TUE awareness</span></div>
+              <div><strong>📱 Social-media physique path</strong><span>Appearance pressure • unrealistic comparisons • hidden risk • marketing traps</span></div>
+              <div><strong>🩺 Medical path</strong><span>Some hormones have legitimate medical indications — that is different from non-medical performance use.</span></div>
+            </div>
+          </div>
+
+          <div class="steroid-basics performance-intro" id="redflagBasics" data-perf-intro="redflags" hidden>
+            <div class="steroid-basics-head">
+              <div><span class="eyebrow">START HERE • SAFETY FIRST</span><h3>Bodybuilding products mein red flags.</h3><p>Kuch products normal supplements jaise market hote hain, lekin label, stimulant load ya hidden drug ingredients problem create kar sakte hain. Yahan FormFit batayega kis cheez se cautious rehna hai.</p></div>
+              <span class="pc-type">SAFETY</span>
+            </div>
+            <div class="steroid-basics-grid">
+              <article><b>1. Hidden ingredients</b><p>“Muscle builder”, “test booster” ya “research” label safety ya purity guarantee nahi karta.</p></article>
+              <article><b>2. Stimulant stacking</b><p>Coffee, energy drinks, caffeine pills aur pre-workouts ko unknowingly combine karna total stimulant exposure badha sakta hai.</p></article>
+              <article><b>3. Unrealistic promises</b><p>“Steroid-like results without side effects” type claims strong warning sign hain.</p></article>
+              <article><b>4. Competition check</b><p>Drug-tested athlete ko supplement ke ingredients aur contamination risk ko anti-doping rules ke context mein verify karna chahiye.</p></article>
+              <article><b>5. Symptoms ko ignore mat karo</b><p>Chest pain, severe breathlessness, fainting, jaundice ya severe abdominal pain jaise symptoms urgent medical attention maang sakte hain.</p></article>
+            </div>
+          </div>
+
+          <div class="performance-library-head">
+            <div><span class="eyebrow">EVIDENCE LIBRARY</span><h3 id="performanceLibraryTitle">Training supplements</h3></div>
+            <input id="performanceSearch" placeholder="Search ingredient or compound..." autocomplete="off">
+          </div>
+          <div id="performanceCards" class="performance-cards"></div>
+
+          <div class="performance-disclaimer">
+            <strong>Medical boundary:</strong> This is educational information, not a diagnosis or prescription. If a product may contain steroids/SARMs or you are already using a performance-enhancing drug, speak with a qualified clinician rather than abruptly changing or stopping a drug on your own. Seek urgent care for chest pain, severe shortness of breath, fainting, severe abdominal pain, jaundice or dark urine.
+          </div>
+        </div>
+      </section>
+
+      <section id="libraryView" class="view">
+        <div class="section-head library-head">
+          <div><span class="eyebrow">EXERCISE LIBRARY</span><h2>Choose your movement.</h2><p>Explore the library. Supported exercises can be sent to the form-check workflow.</p></div>
+          <div class="library-tools"><input id="searchInput" placeholder="Search exercise..."><select id="categoryFilter"><option value="">All categories</option></select></div>
+        </div>
+        <div id="exerciseGrid" class="exercise-grid"></div>
+      </section>
+
+      <section id="formView" class="view">
+        <div class="form-dashboard">
+          <div class="form-topline">
+            <div class="form-title-wrap">
+              <span class="eyebrow">FORM COACH</span>
+              <h2 id="selectedExerciseTitle">Select an exercise.</h2>
+            </div>
+            <div class="run-pill" id="runPill"><span></span> STATUS: <b>READY</b></div>
+          </div>
+
+          <div class="form-session-bar" id="selectedExerciseMeta">
+            SHOW YOUR FULL BODY • View: SIDE • Score: 0% • Reps: 0
+          </div>
+
+          <div class="form-main-grid">
+            <aside class="form-left-metrics">
+              <div class="metric-card score-card">
+                <span>POSTURE SCORE</span>
+                <div class="score-ring"><strong id="metricScore">0</strong><small>/100</small></div>
+                <em id="scoreLabel">READY</em>
+              </div>
+
+              <div class="metric-card">
+                <span>BACK ANGLE</span>
+                <strong id="metricBack">—</strong>
+                <em id="backState">CHECK</em>
+              </div>
+
+              <div class="premapped-demo-card" id="premappedDemoCard">
+                <div class="premapped-demo-head">
+                  <div>
+                    <span>REFERENCE DEMO</span>
+                    <strong id="premappedDemoTitle">Exercise Demo</strong>
+                  </div>
+                  <span class="premapped-demo-badge">READY</span>
+                </div>
+
+                <div class="premapped-demo-frame" id="premappedDemoFrame">
+                  <iframe
+                    id="premappedDemoFrameVideo"
+                    class="premapped-demo-iframe"
+                    title="Exercise reference demonstration"
+                    loading="eager"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+
+                <div class="premapped-demo-meta">
+                  <span id="premappedDemoSource">Reference demonstration</span>
+                </div>
+              </div>
+            </aside>
+
+            <div class="camera-card form-camera-card">
+              <div class="camera-placeholder" id="cameraArea">
+                <div class="camera-icon">◎</div>
+                <h3>Camera workspace</h3>
+                <p>Allow camera access to preview your position. The existing Python pose engine remains the authoritative form-check backend.</p>
+                <button class="primary-btn" id="cameraBtn">Enable camera</button>
+
+                <div class="camera-setup-coach" id="cameraSetupCoach" aria-live="polite">
+                  <div class="camera-setup-head">
+                    <span class="camera-setup-icon">◎</span>
+                    <div>
+                      <span class="camera-setup-kicker">CAMERA SETUP</span>
+                      <strong id="cameraSetupTitle">Get into the frame</strong>
+                    </div>
+                  </div>
+
+                  <div class="camera-setup-main" id="cameraSetupMessage">
+                    Position your full body inside the frame.
+                  </div>
+
+                  <div class="camera-setup-chips">
+                    <div class="camera-setup-chip" id="cameraSetupView">
+                      <span>ANGLE</span><b>—</b>
+                    </div>
+                    <div class="camera-setup-chip" id="cameraSetupDistance">
+                      <span>FRAME</span><b>—</b>
+                    </div>
+                    <div class="camera-setup-chip" id="cameraSetupBody">
+                      <span>BODY</span><b>—</b>
+                    </div>
+                    <div class="camera-setup-chip" id="cameraSetupLight">
+                      <span>LIGHT</span><b>CHECK</b>
+                    </div>
+                  </div>
+                </div>
+
+                <video id="cameraVideo" autoplay playsinline muted></video>
+              </div>
+            </div>
+
+            <aside class="form-coaching-card">
+              <div class="reps-card">
+                <div class="reps-card-head"><span>LIVE REPS</span><span class="reps-reset">↻</span></div>
+                <strong id="liveReps">0</strong>
+                <em>REPS COMPLETED</em>
+              </div>
+
+              <div class="panel-eyebrow">COACHING</div>
+              <div class="coach-status yellow" id="coachStatus">READY TO START</div>
+              <div class="feedback-list" id="feedbackList">
+                <div class="feedback-row"><span></span><b>Keep your movement controlled</b></div>
+                <div class="feedback-row"><span></span><b>Follow the yellow correction guide</b></div>
+                <div class="feedback-row"><span></span><b>Green means your current form is good</b></div>
+              </div>
+              <button class="primary-btn full" id="endSessionBtn">✓ End & Save Session</button>
+              <button class="secondary-btn full" id="backLibrary">← Choose another exercise</button>
+
+              <div class="mini-session-stats">
+                <div><span>CALORIES</span><strong id="caloriesValue">0</strong><small>KCAL</small></div>
+                <div><span>TIME</span><strong id="timeValue">00:00</strong><small>SESSION</small></div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="tip-strip">
+            <div class="tip-icon">✦</div>
+            <div><span>TIP:</span> <b id="tipText">Keep your movement controlled and follow the correction guide.</b></div>
+          </div>
+
+          <div class="bottom-status">
+            <div><span class="live-dot"></span> STATUS: <b id="bottomStatus">READY</b></div>
+            <div>AI ANALYSIS <span class="analysis-meter"><i id="analysisMeter"></i></span> <b id="analysisValue">LIVE</b></div>
+          </div>
+
+          <div class="hidden-form-copy" aria-hidden="true">
+            <span id="formModeName">READY</span>
+            <span id="guideText">Follow the yellow dotted correction guide.</span>
+            <span id="metricPosition">CHECK</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="historyView" class="view">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">YOUR PROGRESS</span>
+            <h2>My workout history.</h2>
+            <p>Your form sessions and AI workout plans are saved to your account.</p>
+          </div>
+          <button class="secondary-btn" id="refreshHistory">↻ Refresh</button>
+        </div>
+        <div class="history-summary" id="historySummary"></div>
+        <div class="history-list" id="historyList">
+          <div class="day-card"><strong>Loading your history…</strong></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <!-- FORMFIT MOBILE ACCOUNT SHEET — account UI only -->
+  <div class="account-sheet-overlay" id="accountSheetOverlay" aria-hidden="true">
+    <section class="account-sheet" role="dialog" aria-modal="true" aria-labelledby="accountSheetTitle">
+      <div class="account-sheet-grabber" aria-hidden="true"></div>
+      <div class="account-sheet-head">
+        <div>
+          <span class="account-sheet-eyebrow">YOUR ACCOUNT</span>
+          <h2 id="accountSheetTitle">Account</h2>
+        </div>
+        <button class="account-sheet-close" id="accountSheetClose" type="button" aria-label="Close account">×</button>
+      </div>
+
+      <div class="account-profile">
+        <div class="account-sheet-avatar" id="accountSheetAvatar">U</div>
+        <div class="account-sheet-profile-copy">
+          <strong id="accountSheetEmail">Not signed in</strong>
+          <span>Personal FormFit account</span>
+        </div>
+      </div>
+
+      <div class="account-actions">
+        <button class="account-action account-action-secondary" id="accountSwitchBtn" type="button">
+          <span class="account-action-icon">⇄</span>
+          <span><strong>Login with another account</strong><small>Switch to a different FormFit account</small></span>
+          <b>›</b>
+        </button>
+
+        <button class="account-action account-action-danger" id="accountSignoutBtn" type="button">
+          <span class="account-action-icon">↪</span>
+          <span><strong>Sign out</strong><small>End this account session on this device</small></span>
+          <b>›</b>
+        </button>
+      </div>
+
+      <button class="account-sheet-cancel" id="accountSheetCancel" type="button">Cancel</button>
+    </section>
+  </div>
+
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-card">
+      <div class="auth-brand"><div class="brand-mark">F</div><div><strong>FORMFIT</strong><small>AI FITNESS COACH</small></div></div>
+      <span class="eyebrow">PRIVATE FITNESS ACCOUNT</span>
+      <h2 id="authTitle">Welcome back.</h2>
+      <p id="authSubtitle">Sign in to keep your workouts, reps and progress saved.</p>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-mode="login">Login</button>
+        <button class="auth-tab" data-auth-mode="register">Create account</button>
+      </div>
+
+      <form id="authForm" autocomplete="on">
+        <label>Email address</label>
+        <input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label>Password</label>
+        <div class="password-field">
+          <input id="authPassword" type="password" autocomplete="current-password" placeholder="Minimum 8 characters" minlength="8" required>
+          <button class="password-toggle" id="authPasswordToggle" type="button" aria-label="Show password" aria-pressed="false">
+            <span class="password-toggle-icon" aria-hidden="true">◉</span>
+            <span class="password-toggle-text">Show</span>
+          </button>
+        </div>
+        <div class="auth-error" id="authError"></div>
+        <button class="primary-btn big" id="authSubmit" type="submit">Login & continue →</button>
+      </form>
+      <small class="auth-security">🔒 Passwords are stored as secure hashes. Your history belongs to your account.</small>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+
+
+<script>
+/* FORMFIT PRO ACCOUNT UX
+   UI/session bridge only. AI pose/model/pipes logic remains in app.js. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+
+  async function session() {
+    try {
+      const r = await fetch("/api/auth/me", {
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+      return await r.json();
+    } catch (_) {
+      return { authenticated: false };
+    }
+  }
+
+  function showLogin() {
+    const overlay = $("#authOverlay");
+    if (!overlay) return;
+    overlay.classList.add("visible");
+    overlay.setAttribute("aria-hidden", "false");
+    const email = $("#authEmail");
+    if (email) setTimeout(() => email.focus(), 80);
+  }
+
+  function showHistory() {
+    const button = document.querySelector('[data-view="history"]');
+    if (button) {
+      button.click();
+      return;
+    }
+    const view = $("#historyView");
+    if (view) view.classList.add("active-view");
+  }
+
+  async function accountClick() {
+    const data = await session();
+    if (data.authenticated) {
+      window.dispatchEvent(new CustomEvent("formfit:open-account"));
+    } else {
+      showLogin();
+    }
+  }
+
+  // Capture phase makes ACCOUNT work regardless of other UI listeners.
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("#accountBtn, .account-card");
+    if (!target || event.target.closest("#logoutBtn")) return;
+    event.preventDefault();
+    event.stopPropagation();
+    accountClick();
+  }, true);
+
+  // Professional first-visit auth gate.
+  async function firstVisitGate() {
+    const data = await session();
+    if (!data.authenticated && !window.__formfitAuthTransition) showLogin();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", firstVisitGate, {once: true});
+  } else {
+    firstVisitGate();
+  }
+})();
+</script>
+
+
+<script data-formfit-auth-tabs-fixed="1">
+/* FORMFIT AUTH TABS FIX — UI/auth only.
+   Does not touch pose, pipes, camera, exercise logic, or model. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const tabs = document.querySelectorAll(".auth-tab[data-auth-mode]");
+  const form = $("#authForm");
+  const overlay = $("#authOverlay");
+  const title = $("#authTitle");
+  const subtitle = $("#authSubtitle");
+  const submit = $("#authSubmit");
+  const error = $("#authError");
+  const email = $("#authEmail");
+  const password = $("#authPassword");
+  const passwordToggle = $("#authPasswordToggle");
+
+  let mode = "login";
+
+  function updatePasswordToggle() {
+    if (!password || !passwordToggle) return;
+    const shown = password.type === "text";
+    passwordToggle.setAttribute("aria-pressed", shown ? "true" : "false");
+    passwordToggle.setAttribute("aria-label", shown ? "Hide password" : "Show password");
+    const text = passwordToggle.querySelector(".password-toggle-text");
+    if (text) text.textContent = shown ? "Hide" : "Show";
+    const icon = passwordToggle.querySelector(".password-toggle-icon");
+    if (icon) icon.textContent = shown ? "◉" : "◌";
+  }
+
+  passwordToggle?.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!password) return;
+    password.type = password.type === "password" ? "text" : "password";
+    updatePasswordToggle();
+    password.focus();
+  });
+
+  function setMode(nextMode) {
+    mode = nextMode === "register" ? "register" : "login";
+
+    tabs.forEach(tab => {
+      tab.classList.toggle(
+        "active",
+        tab.dataset.authMode === mode
+      );
+    });
+
+    if (title) {
+      title.textContent =
+        mode === "register"
+          ? "Create your account."
+          : "Welcome back.";
+    }
+
+    if (subtitle) {
+      subtitle.textContent =
+        mode === "register"
+          ? "Create your private account to save workouts, reps and progress."
+          : "Sign in to keep your workouts, reps and progress saved.";
+    }
+
+    if (submit) {
+      submit.textContent =
+        mode === "register"
+          ? "Create account →"
+          : "Login & continue →";
+    }
+
+    if (password) {
+      password.autocomplete =
+        mode === "register"
+          ? "new-password"
+          : "current-password";
+    }
+
+    if (error) error.textContent = "";
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setMode(tab.dataset.authMode);
+      if (email) setTimeout(() => email.focus(), 30);
+    });
+  });
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const userEmail = email?.value.trim() || "";
+    const userPassword = password?.value || "";
+
+    if (error) error.textContent = "";
+
+    if (!userEmail || !userPassword) {
+      if (error) error.textContent = "Enter your email and password.";
+      return;
+    }
+
+    if (mode === "register" && userPassword.length < 8) {
+      if (error) error.textContent = "Password must be at least 8 characters.";
+      return;
+    }
+
+    const endpoint =
+      mode === "register"
+        ? "/api/auth/register"
+        : "/api/auth/login";
+
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent =
+        mode === "register"
+          ? "Creating account…"
+          : "Signing in…";
+    }
+
+    try {
+      window.__formfitAuthTransition = true;
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        credentials: "same-origin",
+        body: JSON.stringify({
+          email: userEmail,
+          password: userPassword
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        if (error) {
+          if (response.status === 409 && mode === "register") {
+            error.textContent = "An account with this email already exists. Switch to Login.";
+          } else {
+            error.textContent =
+              data.error ||
+              (mode === "register"
+                ? "Could not create account. Please try again."
+                : "Incorrect email or password.");
+          }
+        }
+        return;
+      }
+
+      // Login/register is complete. Always return to the main website view
+      // instead of leaving the user on an auth overlay/hash.
+      if (typeof showView === "function") {
+        showView("home");
+      } else {
+        window.location.hash = "";
+      }
+
+      if (overlay) {
+        overlay.classList.remove("visible", "open");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+
+      // Keep the existing dashboard/account UI in sync.
+      const accountEmail = $("#accountEmail");
+      const accountAvatar = $("#accountAvatar");
+      const savedEmail =
+        data?.user?.email || userEmail;
+
+      if (accountEmail) accountEmail.textContent = savedEmail;
+      if (accountAvatar) {
+        accountAvatar.textContent =
+          savedEmail.charAt(0).toUpperCase();
+      }
+
+      form.reset();
+      setMode("login");
+    } catch (_) {
+      if (error) {
+        error.textContent =
+          "Server connection failed. Make sure the FormFit server is running.";
+      }
+    } finally {
+      window.__formfitAuthTransition = false;
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent =
+          mode === "register"
+            ? "Create account →"
+            : "Login & continue →";
+      }
+    }
+  });
+
+  setMode("login");
+})();
+</script>
+
+
+<script data-formfit-auth-boot-safe="1">
+/* FORMFIT AUTH BOOT SAFETY — auth UI only.
+   Existing login/register/logout logic is preserved. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+
+  async function syncAuthUI() {
+    const overlay = $("#authOverlay");
+    const emailEl = $("#accountEmail");
+    const avatarEl = $("#accountAvatar");
+
+    if (!overlay) return;
+
+    try {
+      const response = await fetch("/api/auth/me", {
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+
+      const data = await response.json();
+
+      if (data?.authenticated && data?.user?.email) {
+        const email = String(data.user.email);
+        if (emailEl) emailEl.textContent = email;
+        if (avatarEl) avatarEl.textContent = email.charAt(0).toUpperCase();
+
+        overlay.classList.remove("visible");
+        overlay.setAttribute("aria-hidden", "true");
+      } else {
+        if (emailEl) emailEl.textContent = "Not signed in";
+        if (avatarEl) avatarEl.textContent = "U";
+
+        overlay.classList.add("visible");
+        overlay.setAttribute("aria-hidden", "false");
+      }
+    } catch (_) {
+      // Keep the existing sign-in UI available during a cold-start/transient failure.
+      overlay.classList.add("visible");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncAuthUI, { once: true });
+  } else {
+    syncAuthUI();
+  }
+})();
+</script>
+
+
+<script data-formfit-mobile-account="1">
+/* FORMFIT MOBILE ACCOUNT SHEET
+   Account UI/session actions only. Does not touch camera, pose, pipes, exercises or scoring. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const overlay = $("#accountSheetOverlay");
+  const emailEl = $("#accountSheetEmail");
+  const avatarEl = $("#accountSheetAvatar");
+  const accountEmail = $("#accountEmail");
+  const accountAvatar = $("#accountAvatar");
+  const authOverlay = $("#authOverlay");
+  if (!overlay) return;
+
+  function syncProfile() {
+    const email = (accountEmail?.textContent || "").trim();
+    const avatar = (accountAvatar?.textContent || "U").trim() || "U";
+    if (emailEl) emailEl.textContent = email || "Not signed in";
+    if (avatarEl) avatarEl.textContent = avatar.charAt(0).toUpperCase();
+  }
+
+  function openSheet() {
+    syncProfile();
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("account-sheet-open");
+  }
+
+  function closeSheet() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("account-sheet-open");
+  }
+
+  function openLogin() {
+    closeSheet();
+    if (authOverlay) {
+      authOverlay.classList.add("visible");
+      authOverlay.classList.add("open");
+      authOverlay.setAttribute("aria-hidden", "false");
+      const title = $("#authTitle");
+      const subtitle = $("#authSubtitle");
+      if (title) title.textContent = "Welcome back.";
+      if (subtitle) subtitle.textContent = "Sign in with the account you want to use.";
+      const email = $("#authEmail");
+      const password = $("#authPassword");
+      if (email) { email.value = ""; email.focus(); }
+      if (password) password.value = "";
+      const error = $("#authError");
+      if (error) error.textContent = "";
+    }
+  }
+
+  async function signOut() {
+    const btn = $("#accountSignoutBtn");
+    if (btn) btn.disabled = true;
+    try {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+    } catch (_) {}
+    try {
+      if (typeof window.stopFormSession === "function") window.stopFormSession();
+    } catch (_) {}
+
+    if (accountEmail) accountEmail.textContent = "Not signed in";
+    if (accountAvatar) accountAvatar.textContent = "U";
+    syncProfile();
+    closeSheet();
+    openLogin();
+    if (btn) btn.disabled = false;
+  }
+
+  window.addEventListener("formfit:open-account", openSheet);
+
+  $("#accountSheetClose")?.addEventListener("click", closeSheet);
+  $("#accountSheetCancel")?.addEventListener("click", closeSheet);
+  $("#accountSwitchBtn")?.addEventListener("click", async () => {
+    // Switching accounts first ends the current session, then opens the existing login UI.
+    try {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+    } catch (_) {}
+    if (accountEmail) accountEmail.textContent = "Not signed in";
+    if (accountAvatar) accountAvatar.textContent = "U";
+    openLogin();
+  });
+  $("#accountSignoutBtn")?.addEventListener("click", signOut);
+
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) closeSheet();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && overlay.classList.contains("open")) closeSheet();
+  });
+
+  // Keep the sheet profile synchronized if the existing auth UI updates the account.
+  const profileObserver = new MutationObserver(syncProfile);
+  if (accountEmail) profileObserver.observe(accountEmail, {childList:true, characterData:true, subtree:true});
+  if (accountAvatar) profileObserver.observe(accountAvatar, {childList:true, characterData:true, subtree:true});
+})();
+</script>
+
+</body>
+</html>

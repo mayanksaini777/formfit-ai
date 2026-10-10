@@ -1,0 +1,9 @@
+FORMFIT SAFE PACKAGE
+
+This package is cleaned from the latest working FormFit build.
+
+IMPORTANT:
+- Do NOT delete or replace your existing formfit_users.db.
+- Keep your existing local HTTPS/private-key files if you already have a working HTTPS setup.
+- This package removes duplicate nested project files, Git metadata, and database snapshots.
+- Existing app functionality is preserved; this package is intended as a clean replacement of project files.

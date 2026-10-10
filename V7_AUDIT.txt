@@ -1,0 +1,7 @@
+V7 next-exercise READY + demo update
+
+Changed file: app.js only.
+Visible READY promotion: high_cable_crossover, pec_deck, dumbbell_pullover, svend_press, pull_up, chin_up, assisted_pull_up, lat_pulldown.
+Existing pose engine and database metadata were not changed.
+YouTube reference mappings added for the next exercise set.
+Syntax check: node --check PASS.

@@ -1,0 +1,68 @@
+{
+  "goal": {
+    "type": "select",
+    "options": [
+      "muscle gain",
+      "strength",
+      "fat loss",
+      "general fitness",
+      "mobility"
+    ],
+    "required": true
+  },
+  "experience": {
+    "type": "select",
+    "options": [
+      "beginner",
+      "intermediate",
+      "advanced"
+    ],
+    "required": true
+  },
+  "days_per_week": {
+    "type": "number",
+    "min": 1,
+    "max": 7,
+    "default": 3,
+    "required": true
+  },
+  "exercises_per_day": {
+    "type": "number",
+    "min": 3,
+    "max": 10,
+    "default": 6,
+    "required": true
+  },
+  "equipment": {
+    "type": "multiselect",
+    "options": [
+      "Bodyweight",
+      "Dumbbells",
+      "Barbell",
+      "Cable",
+      "Machine",
+      "Resistance Band",
+      "Kettlebell",
+      "Bench"
+    ],
+    "default": [
+      "Bodyweight"
+    ]
+  },
+  "target_muscles": {
+    "type": "multiselect",
+    "options": [
+      "Chest",
+      "Back",
+      "Shoulders",
+      "Biceps",
+      "Triceps",
+      "Quadriceps",
+      "Hamstrings",
+      "Glutes",
+      "Calves",
+      "Core"
+    ],
+    "default": []
+  }
+}

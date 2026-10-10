@@ -1,0 +1,27 @@
+--- app.js.before_demo_fix	2026-08-30 13:16:29.390982957 +0000
++++ app.js	2026-08-30 13:16:29.853067758 +0000
+@@ -228,10 +228,11 @@
+ }
+ 
+ function getReferenceCandidates(exercise) {
++  // STRICT EXERCISE MATCHING:
++  // Never fall back to an unrelated exercise just because it shares a
++  // muscle group. A demo must represent the selected movement.
+   const primary = PREMAPPED_DEMOS[exercise?.id];
+-  const poolName = VIDEO_POOL_BY_EXERCISE[exercise?.id];
+-  const pool = VIDEO_FALLBACK_POOLS[poolName] || [];
+-  return dedupeVideoCandidates([primary, ...pool]);
++  return primary ? [primary] : [];
+ }
+ 
+ function loadYouTubeIframeAPI() {
+@@ -382,7 +383,8 @@
+ 
+   if (!referenceCandidates.length) {
+     iframe.src = "about:blank";
+-    source.textContent = "Reference demonstration not mapped yet.";
++    source.textContent =
++      "No verified exercise-specific demo mapped yet.";
+     return;
+   }
+ 

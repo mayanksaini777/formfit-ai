@@ -1,0 +1,3 @@
+Mobile V1 UI-only change.
+Only styles.css was modified; app.js and AI/pose logic were not changed.
+Replace your existing formfit_v2/formfit_v2/styles.css with the included file.

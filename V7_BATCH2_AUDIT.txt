@@ -1,0 +1,43 @@
+FORMFIT V7 BATCH 2 AUDIT
+
+Base: FORMFIT_ALL_EXERCISES_FORM_ENGINE_V6_CLEAN.zip
+
+Changed active file: pose_engine.py ONLY.
+
+Batch 2 dedicated movement analyzers:
+- pull_up
+- chin_up
+- assisted_pull_up
+- lat_pulldown
+- close_grip_lat_pulldown
+- seated_cable_row
+- chest_supported_row
+- barbell_row
+- pendlay_row
+- t_bar_row
+- single_arm_dumbbell_row
+- machine_row
+- face_pull
+- leg_press
+- hack_squat
+- front_squat
+- goblet_squat
+- bulgarian_split_squat
+- romanian_deadlift
+- stiff_leg_deadlift
+- good_morning
+- leg_curl
+- seated_leg_curl
+- hip_thrust
+- barbell_hip_thrust
+- crunch
+
+The proven V6 analyzers remain in place. Batch 2 adds exercise-specific movement-family routing, angles, pipes and rep-counter hooks for the listed exercises. No camera loop, smoothing, existing dedicated analyzer, authentication, diet, recommendation, or API files were edited.
+
+Validation:
+- pose_engine.py AST syntax: PASS
+- imported with a MediaPipe stub for deterministic analyzer smoke testing: PASS
+- EXERCISES count: 154
+- batch analyzer smoke tests: PASS
+- RepCounter smoke tests: PASS
+- baseline archive files copied unchanged except pose_engine.py

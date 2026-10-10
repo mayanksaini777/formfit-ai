@@ -1,0 +1,6236 @@
+{
+  "schema_version": "2.0",
+  "project": "FORMFIT AI",
+  "description": "Expanded exercise library for FORMFIT AI. Library entries can be recommended immediately; real-time form checking is enabled only where the pose engine has corresponding rules.",
+  "exercise_count": 154,
+  "exercises": {
+    "bicep_curls": {
+      "name": "Bicep Curl",
+      "category": "Arms",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms",
+        "Brachialis"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Resistance Band",
+        "Cable"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and stable",
+        "chest": "Up and stable",
+        "elbows": "Close to torso and stable",
+        "wrists": "Neutral",
+        "movement": "Controlled curl and controlled extension"
+      },
+      "common_mistakes": [
+        "Swinging the torso",
+        "Moving elbows forward",
+        "Partial repetitions",
+        "Using momentum"
+      ],
+      "coaching": [
+        "Keep back straight",
+        "Chest up",
+        "Keep elbows close to body",
+        "Control both directions"
+      ],
+      "model_rules": {
+        "check_elbows": true,
+        "check_back": true,
+        "check_chest": true,
+        "check_rep_phase": true,
+        "check_left_right_symmetry": true
+      },
+      "form_check_status": "READY"
+    },
+    "squat": {
+      "name": "Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Core",
+        "Adductors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells",
+        "Barbell"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Up",
+        "knees": "Track with toes",
+        "feet": "Stable and approximately shoulder width",
+        "movement": "Controlled descent and drive upward"
+      },
+      "common_mistakes": [
+        "Knees collapsing inward",
+        "Rounding the back",
+        "Losing heel contact",
+        "Poor depth control"
+      ],
+      "coaching": [
+        "Keep back straight",
+        "Chest up",
+        "Keep knees aligned with toes",
+        "Control your depth"
+      ],
+      "model_rules": {
+        "check_knees": true,
+        "check_back": true,
+        "check_depth": true,
+        "check_ankles": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "shoulder_press": {
+      "name": "Shoulder Press",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Upper Chest",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Barbell",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing or seated",
+      "form": {
+        "back": "Neutral and stable",
+        "chest": "Controlled",
+        "elbows": "Under or slightly forward of wrists",
+        "wrists": "Neutral",
+        "movement": "Press evenly overhead"
+      },
+      "common_mistakes": [
+        "Leaning backward",
+        "Pressing one arm higher",
+        "Flaring elbows excessively",
+        "Overarching the lower back"
+      ],
+      "coaching": [
+        "Keep back straight",
+        "Keep core stable",
+        "Press both arms evenly",
+        "Do not lean backward"
+      ],
+      "model_rules": {
+        "check_shoulders": true,
+        "check_elbows": true,
+        "check_wrists": true,
+        "check_back": true,
+        "check_left_right_symmetry": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "lateral_shoulder_raises": {
+      "name": "Lateral Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Lateral Deltoids"
+      ],
+      "secondary_muscles": [
+        "Trapezius",
+        "Supraspinatus"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Cable",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "chest": "Stable",
+        "elbows": "Slight bend",
+        "shoulders": "Relaxed, not shrugged",
+        "movement": "Raise arms under control to approximately shoulder height"
+      },
+      "common_mistakes": [
+        "Shrugging shoulders",
+        "Swinging weights",
+        "Raising too high",
+        "Uneven arm height"
+      ],
+      "coaching": [
+        "Keep shoulders relaxed",
+        "Raise both arms evenly",
+        "Move toward shoulder height",
+        "Keep torso still"
+      ],
+      "model_rules": {
+        "check_shoulders": true,
+        "check_elbows": true,
+        "check_left_right_symmetry": true,
+        "check_raise_height": true,
+        "check_torso": true
+      },
+      "form_check_status": "READY"
+    },
+    "tricep_extension": {
+      "name": "Tricep Extension",
+      "category": "Arms",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbell",
+        "Cable",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing or seated",
+      "form": {
+        "back": "Neutral",
+        "chest": "Stable",
+        "elbows": "Stable",
+        "movement": "Extend and control the elbow"
+      },
+      "common_mistakes": [
+        "Elbows moving excessively",
+        "Swinging",
+        "Arching the back"
+      ],
+      "coaching": [
+        "Keep elbows stable",
+        "Keep back straight",
+        "Control the extension"
+      ],
+      "model_rules": {
+        "check_elbows": true,
+        "check_back": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "lunges": {
+      "name": "Lunge",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Calves",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells",
+        "Barbell"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "chest": "Up",
+        "front_knee": "Controlled and aligned with foot",
+        "movement": "Controlled step and return"
+      },
+      "common_mistakes": [
+        "Front knee collapsing inward",
+        "Losing balance",
+        "Torso falling forward",
+        "Insufficient control"
+      ],
+      "coaching": [
+        "Chest up",
+        "Back straight",
+        "Keep front knee aligned",
+        "Control the descent"
+      ],
+      "model_rules": {
+        "check_front_knee": true,
+        "check_back": true,
+        "check_balance": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "push_up": {
+      "name": "Push-Up",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Straight neutral line",
+        "chest": "Controlled toward floor",
+        "elbows": "Controlled, not excessively flared",
+        "hips": "Stay aligned with shoulders",
+        "movement": "Controlled down and up"
+      },
+      "common_mistakes": [
+        "Hips sagging",
+        "Hips too high",
+        "Elbows flaring",
+        "Partial repetitions"
+      ],
+      "coaching": [
+        "Keep body straight",
+        "Keep core tight",
+        "Control the descent",
+        "Keep elbows controlled"
+      ],
+      "model_rules": {
+        "check_body_line": true,
+        "check_elbows": true,
+        "check_hips": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "dumbbell_row": {
+      "name": "Dumbbell Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Latissimus Dorsi",
+        "Rhomboids"
+      ],
+      "secondary_muscles": [
+        "Biceps",
+        "Rear Deltoids",
+        "Trapezius"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbell"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Bent-over standing",
+      "form": {
+        "back": "Neutral and stable",
+        "chest": "Stable",
+        "elbows": "Drive backward",
+        "movement": "Pull toward torso and control return"
+      },
+      "common_mistakes": [
+        "Rounding the back",
+        "Rotating the torso",
+        "Pulling with momentum",
+        "Shrugging"
+      ],
+      "coaching": [
+        "Keep back straight",
+        "Keep chest stable",
+        "Pull elbow back",
+        "Control the weight"
+      ],
+      "model_rules": {
+        "check_back": true,
+        "check_elbow": true,
+        "check_torso": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "sit_up": {
+      "name": "Sit-Up",
+      "category": "Core",
+      "primary_muscles": [
+        "Rectus Abdominis"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors",
+        "Obliques"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Controlled",
+        "movement": "Lift and lower torso under control"
+      },
+      "common_mistakes": [
+        "Using excessive momentum",
+        "Pulling the neck",
+        "Dropping down quickly"
+      ],
+      "coaching": [
+        "Keep movement controlled",
+        "Lift torso with control",
+        "Do not pull your neck"
+      ],
+      "model_rules": {
+        "check_hip": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "jumping_jack": {
+      "name": "Jumping Jack",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Calves",
+        "Shoulders",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "arms": "Open overhead",
+        "legs": "Open and close symmetrically",
+        "landing": "Controlled",
+        "movement": "Rhythmic and coordinated"
+      },
+      "common_mistakes": [
+        "Uneven arm movement",
+        "Poor landing control",
+        "Insufficient range"
+      ],
+      "coaching": [
+        "Open arms and legs",
+        "Land softly",
+        "Keep movement controlled"
+      ],
+      "model_rules": {
+        "check_arms": true,
+        "check_legs": true,
+        "check_symmetry": true,
+        "check_movement": true
+      },
+      "form_check_status": "READY"
+    },
+    "bench_press": {
+      "name": "Bench Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Stable",
+        "shoulders": "Stable",
+        "wrists": "Neutral",
+        "movement": "Controlled press"
+      },
+      "common_mistakes": [
+        "Uncontrolled bar",
+        "Wrists bent back",
+        "Uneven pressing"
+      ],
+      "coaching": [
+        "Keep shoulders stable",
+        "Keep wrists neutral",
+        "Press evenly"
+      ],
+      "model_rules": {
+        "check_shoulders": true,
+        "check_wrists": true,
+        "check_symmetry": true
+      },
+      "form_check_status": "READY"
+    },
+    "deadlift": {
+      "name": "Deadlift",
+      "category": "Back",
+      "primary_muscles": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Erector Spinae",
+        "Trapezius",
+        "Core"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "chest": "Controlled",
+        "hips": "Hinge backward",
+        "movement": "Drive through floor"
+      },
+      "common_mistakes": [
+        "Rounded back",
+        "Bar drifting away",
+        "Squatting instead of hinging"
+      ],
+      "coaching": [
+        "Keep back neutral",
+        "Keep bar close",
+        "Hinge at the hips"
+      ],
+      "model_rules": {
+        "check_back": true,
+        "check_hip_hinge": true,
+        "check_bar_path": true
+      },
+      "form_check_status": "READY"
+    },
+    "front_raise": {
+      "name": "Front Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "secondary_muscles": [
+        "Upper Chest"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "shoulders": "Relaxed",
+        "movement": "Raise to controlled height"
+      },
+      "common_mistakes": [
+        "Swinging",
+        "Shrugging",
+        "Overraising"
+      ],
+      "coaching": [
+        "Keep torso still",
+        "Relax shoulders",
+        "Control the raise"
+      ],
+      "model_rules": {
+        "check_shoulders": true,
+        "check_torso": true,
+        "check_raise_height": true
+      },
+      "form_check_status": "READY"
+    },
+    "hammer_curl": {
+      "name": "Hammer Curl",
+      "category": "Arms",
+      "primary_muscles": [
+        "Brachialis",
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "elbows": "Stable",
+        "wrists": "Neutral",
+        "movement": "Controlled curl"
+      },
+      "common_mistakes": [
+        "Swinging",
+        "Elbows moving forward",
+        "Partial reps"
+      ],
+      "coaching": [
+        "Keep elbows stable",
+        "Keep wrists neutral",
+        "Avoid swinging"
+      ],
+      "model_rules": {
+        "check_elbows": true,
+        "check_back": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "calf_raise": {
+      "name": "Calf Raise",
+      "category": "Legs",
+      "primary_muscles": [
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Soleus"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells",
+        "Machine"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "knees": "Stable",
+        "ankles": "Controlled",
+        "movement": "Raise and lower heels"
+      },
+      "common_mistakes": [
+        "Bouncing",
+        "Uneven weight",
+        "Partial range"
+      ],
+      "coaching": [
+        "Rise under control",
+        "Lower fully",
+        "Keep balance"
+      ],
+      "model_rules": {
+        "check_ankles": true,
+        "check_balance": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "glute_bridge": {
+      "name": "Glute Bridge",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Controlled",
+        "hips": "Extend without excessive arch",
+        "movement": "Lift and lower hips"
+      },
+      "common_mistakes": [
+        "Overarching",
+        "Using momentum",
+        "Uneven hips"
+      ],
+      "coaching": [
+        "Squeeze glutes",
+        "Lift hips with control",
+        "Keep ribs controlled"
+      ],
+      "model_rules": {
+        "check_hip": true,
+        "check_back": true,
+        "check_symmetry": true
+      },
+      "form_check_status": "READY"
+    },
+    "plank": {
+      "name": "Plank",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Glutes"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Straight neutral line",
+        "hips": "Aligned",
+        "neck": "Neutral"
+      },
+      "common_mistakes": [
+        "Hips sagging",
+        "Hips too high",
+        "Neck lifted"
+      ],
+      "coaching": [
+        "Keep body straight",
+        "Keep hips aligned",
+        "Keep neck neutral"
+      ],
+      "model_rules": {
+        "check_body_line": true,
+        "check_hips": true,
+        "check_neck": true
+      },
+      "form_check_status": "READY"
+    },
+    "mountain_climber": {
+      "name": "Mountain Climber",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Hip Flexors",
+        "Legs"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Stable",
+        "hips": "Controlled",
+        "movement": "Alternating knee drive"
+      },
+      "common_mistakes": [
+        "Hips bouncing",
+        "Rounded shoulders",
+        "Poor rhythm"
+      ],
+      "coaching": [
+        "Keep hips stable",
+        "Keep shoulders strong",
+        "Drive knees under control"
+      ],
+      "model_rules": {
+        "check_body_line": true,
+        "check_hips": true,
+        "check_movement": true
+      },
+      "form_check_status": "READY"
+    },
+    "burpee": {
+      "name": "Burpee",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Chest",
+        "Legs",
+        "Core",
+        "Shoulders"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing / Floor",
+      "form": {
+        "back": "Controlled",
+        "landing": "Soft",
+        "movement": "Squat, plank, return, jump"
+      },
+      "common_mistakes": [
+        "Poor landing",
+        "Rounded back",
+        "Rushed movement"
+      ],
+      "coaching": [
+        "Keep back controlled",
+        "Land softly",
+        "Complete each phase"
+      ],
+      "model_rules": {
+        "check_back": true,
+        "check_landing": true,
+        "check_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "step_up": {
+      "name": "Step-Up",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bench",
+        "Bodyweight",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "knee": "Aligned",
+        "torso": "Stable",
+        "movement": "Controlled step and return"
+      },
+      "common_mistakes": [
+        "Knee collapse",
+        "Pushing excessively from trailing leg",
+        "Losing balance"
+      ],
+      "coaching": [
+        "Keep knee aligned",
+        "Stay stable",
+        "Control the step down"
+      ],
+      "model_rules": {
+        "check_knee": true,
+        "check_balance": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "reverse_lunge": {
+      "name": "Reverse Lunge",
+      "category": "Legs",
+      "primary_muscles": [
+        "Glutes",
+        "Quadriceps"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "SIDE",
+        "FRONT"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral",
+        "chest": "Up",
+        "knee": "Aligned"
+      },
+      "common_mistakes": [
+        "Front knee collapsing",
+        "Leaning forward",
+        "Uncontrolled return"
+      ],
+      "coaching": [
+        "Chest up",
+        "Keep front knee aligned",
+        "Control every step"
+      ],
+      "model_rules": {
+        "check_knee": true,
+        "check_back": true,
+        "check_balance": true
+      },
+      "form_check_status": "READY"
+    },
+    "chest_fly": {
+      "name": "Chest Fly",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Cable",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing, seated or lying depending on variation",
+      "form": {
+        "shoulders": "Stable",
+        "elbows": "Slightly bent",
+        "movement": "Controlled open and close"
+      },
+      "common_mistakes": [
+        "Overstretching",
+        "Bent wrists",
+        "Using momentum"
+      ],
+      "coaching": [
+        "Keep shoulders stable",
+        "Keep a slight elbow bend",
+        "Control the range"
+      ],
+      "model_rules": {
+        "check_shoulders": true,
+        "check_elbows": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "incline_dumbbell_press": {
+      "name": "Incline Dumbbell Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "decline_bench_press": {
+      "name": "Decline Bench Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "incline_bench_press": {
+      "name": "Incline Bench Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "dumbbell_bench_press": {
+      "name": "Dumbbell Bench Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "close_grip_bench_press": {
+      "name": "Close Grip Bench Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest",
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Lying",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "push_up_wide_grip": {
+      "name": "Push-Up Wide Grip",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "push_up_diamond": {
+      "name": "Push-Up Diamond",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest",
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "incline_push_up": {
+      "name": "Incline Push-Up",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "decline_push_up": {
+      "name": "Decline Push-Up",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest",
+        "Shoulders"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "chest_press_machine": {
+      "name": "Chest Press Machine",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "cable_crossover": {
+      "name": "Cable Crossover",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "low_cable_crossover": {
+      "name": "Low Cable Crossover",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "READY"
+    },
+    "high_cable_crossover": {
+      "name": "High Cable Crossover",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "pec_deck": {
+      "name": "Pec Deck",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "dumbbell_pullover": {
+      "name": "Dumbbell Pullover",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Lats"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "svend_press": {
+      "name": "Svend Press",
+      "category": "Chest",
+      "primary_muscles": [
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Plate"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "pull_up": {
+      "name": "Pull-Up",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight",
+        "Pull-Up Bar"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "chin_up": {
+      "name": "Chin-Up",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats",
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight",
+        "Pull-Up Bar"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "assisted_pull_up": {
+      "name": "Assisted Pull-Up",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "lat_pulldown": {
+      "name": "Lat Pulldown",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps",
+        "Upper Back"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Sit tall and keep the torso controlled",
+        "Drive elbows down toward the ribs",
+        "Control the bar on the return"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true,
+        "exercise_specific": true
+      },
+      "form_check_status": "READY"
+    },
+    "close_grip_lat_pulldown": {
+      "name": "Close Grip Lat Pulldown",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep torso controlled",
+        "Drive both elbows down evenly",
+        "Control the return"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true,
+        "exercise_specific": true
+      },
+      "form_check_status": "READY"
+    },
+    "straight_arm_pulldown": {
+      "name": "Straight Arm Pulldown",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "seated_cable_row": {
+      "name": "Seated Cable Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Mid Back"
+      ],
+      "secondary_muscles": [
+        "Lats",
+        "Biceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "chest_supported_row": {
+      "name": "Chest Supported Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Mid Back"
+      ],
+      "secondary_muscles": [
+        "Lats",
+        "Biceps"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Machine",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "barbell_row": {
+      "name": "Barbell Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Upper Back",
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "pendlay_row": {
+      "name": "Pendlay Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Upper Back",
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "t_bar_row": {
+      "name": "T-Bar Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Upper Back"
+      ],
+      "secondary_muscles": [
+        "Lats",
+        "Biceps"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "single_arm_dumbbell_row": {
+      "name": "Single Arm Dumbbell Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Lats"
+      ],
+      "secondary_muscles": [
+        "Biceps",
+        "Rear Deltoids"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "machine_row": {
+      "name": "Machine Row",
+      "category": "Back",
+      "primary_muscles": [
+        "Mid Back"
+      ],
+      "secondary_muscles": [
+        "Biceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "reverse_fly": {
+      "name": "Reverse Fly",
+      "category": "Back",
+      "primary_muscles": [
+        "Rear Deltoids",
+        "Upper Back"
+      ],
+      "secondary_muscles": [
+        "Trapezius"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "face_pull": {
+      "name": "Face Pull",
+      "category": "Back",
+      "primary_muscles": [
+        "Rear Deltoids",
+        "Upper Back"
+      ],
+      "secondary_muscles": [
+        "Rotator Cuff"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "back_extension": {
+      "name": "Back Extension",
+      "category": "Back",
+      "primary_muscles": [
+        "Erector Spinae"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Machine",
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "good_morning": {
+      "name": "Good Morning",
+      "category": "Back",
+      "primary_muscles": [
+        "Hamstrings",
+        "Erector Spinae"
+      ],
+      "secondary_muscles": [
+        "Glutes"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "arnold_press": {
+      "name": "Arnold Press",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Upper Chest"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "dumbbell_shoulder_press": {
+      "name": "Dumbbell Shoulder Press",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids"
+      ],
+      "secondary_muscles": [
+        "Triceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "barbell_overhead_press": {
+      "name": "Barbell Overhead Press",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids"
+      ],
+      "secondary_muscles": [
+        "Triceps",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "machine_shoulder_press": {
+      "name": "Machine Shoulder Press",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids"
+      ],
+      "secondary_muscles": [
+        "Triceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "rear_delt_fly": {
+      "name": "Rear Delt Fly",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Rear Deltoids"
+      ],
+      "secondary_muscles": [
+        "Upper Back"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cable_lateral_raise": {
+      "name": "Cable Lateral Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Lateral Deltoids"
+      ],
+      "secondary_muscles": [
+        "Trapezius"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cable_front_raise": {
+      "name": "Cable Front Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "secondary_muscles": [
+        "Upper Chest"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "upright_row": {
+      "name": "Upright Row",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Deltoids",
+        "Upper Back"
+      ],
+      "secondary_muscles": [
+        "Trapezius"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "plate_front_raise": {
+      "name": "Plate Front Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Anterior Deltoids"
+      ],
+      "secondary_muscles": [
+        "Upper Chest"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Plate"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "leaning_lateral_raise": {
+      "name": "Leaning Lateral Raise",
+      "category": "Shoulders",
+      "primary_muscles": [
+        "Lateral Deltoids"
+      ],
+      "secondary_muscles": [
+        "Trapezius"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "alternating_dumbbell_curl": {
+      "name": "Alternating Dumbbell Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "concentration_curl": {
+      "name": "Concentration Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Brachialis"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "preacher_curl": {
+      "name": "Preacher Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "EZ Bar",
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "ez_bar_curl": {
+      "name": "EZ Bar Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "EZ Bar"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "barbell_curl": {
+      "name": "Barbell Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cable_curl": {
+      "name": "Cable Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "incline_dumbbell_curl": {
+      "name": "Incline Dumbbell Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Brachialis"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "spider_curl": {
+      "name": "Spider Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "zottman_curl": {
+      "name": "Zottman Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Biceps",
+        "Forearms"
+      ],
+      "secondary_muscles": [
+        "Brachialis"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "reverse_curl": {
+      "name": "Reverse Curl",
+      "category": "Biceps",
+      "primary_muscles": [
+        "Forearms",
+        "Brachialis"
+      ],
+      "secondary_muscles": [
+        "Biceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Barbell",
+        "EZ Bar"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "tricep_pushdown": {
+      "name": "Tricep Pushdown",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "rope_tricep_pushdown": {
+      "name": "Rope Tricep Pushdown",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "overhead_cable_tricep_extension": {
+      "name": "Overhead Cable Tricep Extension",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "skull_crusher": {
+      "name": "Skull Crusher",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Forearms"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "EZ Bar",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "close_grip_push_up": {
+      "name": "Close Grip Push-Up",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps",
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "bench_dip": {
+      "name": "Bench Dip",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Chest",
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bench",
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "parallel_bar_dip": {
+      "name": "Parallel Bar Dip",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps",
+        "Chest"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dip Bar"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "dumbbell_kickback": {
+      "name": "Dumbbell Kickback",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Rear Deltoids"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cable_kickback": {
+      "name": "Cable Kickback",
+      "category": "Triceps",
+      "primary_muscles": [
+        "Triceps"
+      ],
+      "secondary_muscles": [
+        "Rear Deltoids"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "leg_press": {
+      "name": "Leg Press",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hack_squat": {
+      "name": "Hack Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "front_squat": {
+      "name": "Front Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "goblet_squat": {
+      "name": "Goblet Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Dumbbell",
+        "Kettlebell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "bulgarian_split_squat": {
+      "name": "Bulgarian Split Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "romanian_deadlift": {
+      "name": "Romanian Deadlift",
+      "category": "Legs",
+      "primary_muscles": [
+        "Hamstrings",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Erector Spinae"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "stiff_leg_deadlift": {
+      "name": "Stiff Leg Deadlift",
+      "category": "Legs",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Back"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "leg_extension": {
+      "name": "Leg Extension",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps"
+      ],
+      "secondary_muscles": [],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "leg_curl": {
+      "name": "Leg Curl",
+      "category": "Legs",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "seated_leg_curl": {
+      "name": "Seated Leg Curl",
+      "category": "Legs",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "nordic_hamstring_curl": {
+      "name": "Nordic Hamstring Curl",
+      "category": "Legs",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Glutes"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "walking_lunge": {
+      "name": "Walking Lunge",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "curtsy_lunge": {
+      "name": "Curtsy Lunge",
+      "category": "Legs",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Quadriceps",
+        "Adductors"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "lateral_lunge": {
+      "name": "Lateral Lunge",
+      "category": "Legs",
+      "primary_muscles": [
+        "Glutes",
+        "Adductors"
+      ],
+      "secondary_muscles": [
+        "Quadriceps"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "box_squat": {
+      "name": "Box Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Box"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "wall_sit": {
+      "name": "Wall Sit",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps"
+      ],
+      "secondary_muscles": [
+        "Glutes"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "sissy_squat": {
+      "name": "Sissy Squat",
+      "category": "Legs",
+      "primary_muscles": [
+        "Quadriceps"
+      ],
+      "secondary_muscles": [
+        "Glutes"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hip_thrust": {
+      "name": "Hip Thrust",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "barbell_hip_thrust": {
+      "name": "Barbell Hip Thrust",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Barbell",
+        "Bench"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cable_pull_through": {
+      "name": "Cable Pull Through",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "donkey_kick": {
+      "name": "Donkey Kick",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "fire_hydrant": {
+      "name": "Fire Hydrant",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes",
+        "Hip Abductors"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "clamshell": {
+      "name": "Clamshell",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glute Medius"
+      ],
+      "secondary_muscles": [
+        "Hip Abductors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "frog_pump": {
+      "name": "Frog Pump",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "banded_glute_bridge": {
+      "name": "Banded Glute Bridge",
+      "category": "Glutes",
+      "primary_muscles": [
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Hip Abductors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "crunch": {
+      "name": "Crunch",
+      "category": "Core",
+      "primary_muscles": [
+        "Rectus Abdominis"
+      ],
+      "secondary_muscles": [
+        "Obliques"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "bicycle_crunch": {
+      "name": "Bicycle Crunch",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs",
+        "Obliques"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "reverse_crunch": {
+      "name": "Reverse Crunch",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "leg_raise": {
+      "name": "Leg Raise",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hanging_leg_raise": {
+      "name": "Hanging Leg Raise",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors",
+        "Forearms"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Pull-Up Bar"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "knee_raise": {
+      "name": "Knee Raise",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dip Station"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "russian_twist": {
+      "name": "Russian Twist",
+      "category": "Core",
+      "primary_muscles": [
+        "Obliques"
+      ],
+      "secondary_muscles": [
+        "Abs"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight",
+        "Plate"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "dead_bug": {
+      "name": "Dead Bug",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "bird_dog": {
+      "name": "Bird Dog",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Back"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hollow_body_hold": {
+      "name": "Hollow Body Hold",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "v_up": {
+      "name": "V-Up",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "flutter_kick": {
+      "name": "Flutter Kick",
+      "category": "Core",
+      "primary_muscles": [
+        "Abs"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "heel_touch": {
+      "name": "Heel Touch",
+      "category": "Core",
+      "primary_muscles": [
+        "Obliques"
+      ],
+      "secondary_muscles": [
+        "Abs"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "side_plank": {
+      "name": "Side Plank",
+      "category": "Core",
+      "primary_muscles": [
+        "Obliques"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Shoulders"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "pallof_press": {
+      "name": "Pallof Press",
+      "category": "Core",
+      "primary_muscles": [
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Obliques"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Cable",
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "seated_calf_raise": {
+      "name": "Seated Calf Raise",
+      "category": "Calves",
+      "primary_muscles": [
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Soleus"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "standing_calf_raise": {
+      "name": "Standing Calf Raise",
+      "category": "Calves",
+      "primary_muscles": [
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Soleus"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Machine",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "donkey_calf_raise": {
+      "name": "Donkey Calf Raise",
+      "category": "Calves",
+      "primary_muscles": [
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Soleus"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Machine"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "single_leg_calf_raise": {
+      "name": "Single Leg Calf Raise",
+      "category": "Calves",
+      "primary_muscles": [
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Ankle Stabilizers"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "kettlebell_swing": {
+      "name": "Kettlebell Swing",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Glutes",
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Kettlebell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "thruster": {
+      "name": "Thruster",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Quadriceps",
+        "Shoulders"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Triceps"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Dumbbells",
+        "Barbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "clean_and_press": {
+      "name": "Clean and Press",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Legs",
+        "Core"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Barbell",
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "kettlebell_clean": {
+      "name": "Kettlebell Clean",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Shoulders",
+        "Core"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Kettlebell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "bear_crawl": {
+      "name": "Bear Crawl",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Core",
+        "Shoulders"
+      ],
+      "secondary_muscles": [
+        "Legs",
+        "Chest"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "inchworm": {
+      "name": "Inchworm",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Core",
+        "Shoulders"
+      ],
+      "secondary_muscles": [
+        "Hamstrings"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "man_maker": {
+      "name": "Man Maker",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Chest",
+        "Back",
+        "Legs",
+        "Shoulders"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Dumbbells"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "turkish_get_up": {
+      "name": "Turkish Get-Up",
+      "category": "Full Body",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Shoulders",
+        "Glutes"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Kettlebell",
+        "Dumbbell"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "high_knees": {
+      "name": "High Knees",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Full Body"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors",
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "butt_kicks": {
+      "name": "Butt Kicks",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Calves",
+        "Glutes"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "skater_jumps": {
+      "name": "Skater Jumps",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Glutes",
+        "Legs"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Calves"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "jump_squat": {
+      "name": "Jump Squat",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Calves",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "box_jump": {
+      "name": "Box Jump",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Glutes",
+        "Quadriceps"
+      ],
+      "secondary_muscles": [
+        "Calves",
+        "Core"
+      ],
+      "difficulty": "Intermediate",
+      "equipment": [
+        "Box"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "tuck_jump": {
+      "name": "Tuck Jump",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Quadriceps",
+        "Glutes"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Calves"
+      ],
+      "difficulty": "Advanced",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "lateral_shuffle": {
+      "name": "Lateral Shuffle",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Legs"
+      ],
+      "secondary_muscles": [
+        "Glutes",
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "shadow_boxing": {
+      "name": "Shadow Boxing",
+      "category": "Cardio",
+      "primary_muscles": [
+        "Shoulders",
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Legs",
+        "Arms"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "FRONT",
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "world_s_greatest_stretch": {
+      "name": "World's Greatest Stretch",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Hip Flexors",
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Thoracic Spine",
+        "Glutes"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "cat_cow": {
+      "name": "Cat Cow",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Spine"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "thoracic_rotation": {
+      "name": "Thoracic Rotation",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Thoracic Spine"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Core"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hip_flexor_stretch": {
+      "name": "Hip Flexor Stretch",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Hip Flexors"
+      ],
+      "secondary_muscles": [
+        "Quadriceps"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "hamstring_stretch": {
+      "name": "Hamstring Stretch",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Hamstrings"
+      ],
+      "secondary_muscles": [
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "quad_stretch": {
+      "name": "Quad Stretch",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Quadriceps"
+      ],
+      "secondary_muscles": [
+        "Hip Flexors"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "child_s_pose": {
+      "name": "Child's Pose",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Back"
+      ],
+      "secondary_muscles": [
+        "Shoulders",
+        "Hips"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "downward_dog": {
+      "name": "Downward Dog",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Hamstrings",
+        "Calves"
+      ],
+      "secondary_muscles": [
+        "Shoulders"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Floor",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "shoulder_dislocates": {
+      "name": "Shoulder Dislocates",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Shoulders"
+      ],
+      "secondary_muscles": [
+        "Upper Back"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Resistance Band"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    },
+    "ankle_dorsiflexion": {
+      "name": "Ankle Dorsiflexion",
+      "category": "Mobility",
+      "primary_muscles": [
+        "Ankles"
+      ],
+      "secondary_muscles": [
+        "Calves"
+      ],
+      "difficulty": "Beginner",
+      "equipment": [
+        "Bodyweight"
+      ],
+      "recommended_views": [
+        "SIDE"
+      ],
+      "position": "Standing",
+      "form": {
+        "back": "Neutral and controlled",
+        "chest": "Stable",
+        "movement": "Controlled through the available range"
+      },
+      "common_mistakes": [
+        "Using momentum",
+        "Poor joint alignment",
+        "Uncontrolled range of motion"
+      ],
+      "coaching": [
+        "Keep the movement controlled",
+        "Maintain stable posture",
+        "Use a comfortable range of motion"
+      ],
+      "model_rules": {
+        "check_alignment": true,
+        "check_rep_phase": true
+      },
+      "form_check_status": "COMING_SOON"
+    }
+  }
+}

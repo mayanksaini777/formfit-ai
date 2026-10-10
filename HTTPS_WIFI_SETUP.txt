@@ -1,0 +1,21 @@
+FORMFIT LOCAL HTTPS / WIFI CHANGE FIX
+
+This build automatically detects the current LAN IPv4 address and generates an HTTPS server certificate with that IP in the SAN. The same local CA is reused, so changing Wi-Fi/IP no longer requires manually editing app.py.
+
+FIRST RUN
+1. Start start_formfit_all.bat.
+2. Read the Phone URL printed by app.py, for example:
+   https://192.168.1.33:5000
+3. On the phone, open that URL once.
+4. Download the CA certificate from:
+   https://192.168.1.33:5000/formfit-ca.crt
+5. Install that CA certificate on Android under Settings > Security/Privacy > Encryption & credentials > Install a certificate > CA certificate (wording varies by phone).
+6. Re-open the Phone URL. Chrome should now show a secure HTTPS connection instead of the old HTTP “Not secure” state.
+
+FUTURE WIFI CHANGES
+The app regenerates the server certificate automatically for the newly detected LAN IP while keeping the same local CA. If the phone has already trusted the FormFit Local CA, no new CA installation is needed.
+
+IMPORTANT
+- formfit_users.db is NOT replaced or deleted. User accounts/history remain untouched.
+- formfit_api.py stays on 127.0.0.1:5050; the phone reaches it through the main HTTPS web server.
+- Do not expose port 5050 to the LAN.

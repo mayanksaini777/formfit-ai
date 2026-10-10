@@ -1,0 +1,25 @@
+FORMFIT AUTH FIX
+
+Problem fixed:
+SQLite registration used INSERT ... RETURNING id. The cursor remained active when the DB context manager committed, causing:
+  sqlite3.OperationalError: cannot commit transaction - SQL statements in progress
+This could then cause:
+  sqlite3.OperationalError: database is locked
+
+Fix:
+- SQLite registration now uses a normal INSERT and cursor.lastrowid.
+- PostgreSQL keeps INSERT ... RETURNING id.
+- Login/session behavior is unchanged.
+- No frontend/UI or pose-engine files were intentionally changed.
+
+Run from the formfit_v2 folder:
+  .\\venv_train\\Scripts\\python.exe app.py
+
+PC browser:
+  http://127.0.0.1:5000
+
+Phone on same Wi-Fi:
+  http://YOUR-PC-IP:5000
+  Example: http://192.168.1.24:5000
+
+If an old Python server is still running, stop it before starting the fixed server.

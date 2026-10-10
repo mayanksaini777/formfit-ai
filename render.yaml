@@ -1,0 +1,41 @@
+databases:
+  - name: formfit-db
+    plan: free
+    region: singapore
+    databaseName: formfit
+    user: formfit
+
+services:
+  - type: web
+    name: formfit-web
+    runtime: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: formfit-db
+          property: connectionString
+      - key: FORMFIT_POSE_API_URL
+        fromService:
+          type: web
+          name: formfit-ai
+          property: hostport
+      - key: FORMFIT_POSE_API_FALLBACK_URL
+        value: "https://formfit-ai.onrender.com"
+      - key: FORMFIT_PRODUCTION
+        value: "true"
+      - key: FORMFIT_SECRET_KEY
+        generateValue: true
+
+  - type: web
+    name: formfit-ai
+    runtime: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements_pose_api.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT formfit_api:app
+    healthCheckPath: /api/health

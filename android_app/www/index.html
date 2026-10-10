@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMFIT AI — Smart Workout & Form Coach</title>
+  <meta name="description" content="AI-powered personalized workout planning and exercise form coaching.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">F</div>
+        <div>
+          <div class="brand-name">FORMFIT</div>
+          <div class="brand-sub">AI FITNESS COACH</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-item active" data-view="home">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-view="recommend">✦ <span>AI Workout</span></button>
+        <button class="nav-item" data-view="winterArc">❄ <span>Winter Arc</span></button>
+        <button class="nav-item" data-view="meal">🥗 <span>Meal Plan</span></button>
+        <button class="nav-item" data-view="library">◈ <span>Exercise Library</span></button>
+        <button class="nav-item" data-view="form">◎ <span>Form Checker</span></button>
+        <button class="nav-item" data-view="history">◷ <span>My History</span></button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="tiny-label">YOUR COACH</span>
+        <strong>Train smarter.</strong>
+        <p>Build a plan around your goal, experience and equipment.</p>
+      </div>
+
+      <div class="account-card">
+        <div class="account-avatar" id="accountAvatar">U</div>
+        <div class="account-info"><span id="accountEmail">Not signed in</span><small>Personal account</small></div>
+        <button class="logout-btn" id="logoutBtn" title="Log out">↪</button>
+      </div>
+
+        <button class="account-action account-action-country" id="accountCountryBtn" type="button">
+          <span class="account-action-icon">🌍</span>
+          <span><strong>Change Country</strong><small id="accountCountrySummary">India · Used for food and diet suggestions</small></span>
+          <b>›</b>
+        </button>
+
+      <div class="sidebar-footer">FORMFIT AI • v1.0</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">AI FITNESS PLATFORM</span>
+          <h1 id="pageTitle">Train with better form.</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="quickLibrary">Browse exercises</button>
+          <button class="primary-btn" id="quickAI">Build my workout <span>→</span></button>
+        </div>
+      <button class="account-btn" id="accountBtn" type="button">ACCOUNT</button>
+</header>
+
+      <section id="homeView" class="view active-view">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="pill">SMART • PERSONAL • FORM-FIRST</span>
+            <h2>Your workout.<br><em>Built around you.</em></h2>
+            <p>Get a personalized workout plan and practice each exercise with clear form guidance, correction cues and rep tracking.</p>
+            <div class="hero-actions">
+              <button class="primary-btn big" data-view="recommend">✦ Build my workout</button>
+              <button class="secondary-btn big" data-view="library">Choose an exercise</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="pose-card">
+              <div class="pose-head"></div>
+              <div class="pose-body"></div>
+              <div class="pose-limb l1"></div>
+              <div class="pose-limb l2"></div>
+              <div class="pose-limb l3"></div>
+              <div class="pose-limb l4"></div>
+              <span class="pose-dot d1"></span><span class="pose-dot d2"></span>
+              <span class="pose-dot d3"></span><span class="pose-dot d4"></span>
+              <div class="pose-status">● FORM READY</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card"><span>EXERCISE LIBRARY</span><strong id="exerciseCount">—</strong><small>available to explore</small></div>
+          <div class="stat-card"><span>AI FORM CHECK</span><strong>10</strong><small>tested exercises</small></div>
+          <div class="stat-card"><span>MODES</span><strong>02</strong><small>AI plan + manual</small></div>
+          <div class="stat-card"><span>COACHING</span><strong>24/7</strong><small>visual correction cues</small></div>
+        </div>
+
+        <div class="section-head">
+          <div><span class="eyebrow">HOW IT WORKS</span><h3>One platform. Two ways to train.</h3></div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="feature-num">01</div><h4>AI builds your plan</h4><p>Tell us your goal, experience, schedule and equipment. The recommendation engine builds a balanced plan.</p></div>
+          <div class="feature-card"><div class="feature-num">02</div><h4>You choose the exercise</h4><p>Prefer control? Search the exercise library and select exactly what you want to practice.</p></div>
+          <div class="feature-card"><div class="feature-num">03</div><h4>Practice with form cues</h4><p>Use the form checker for supported exercises with green, red and yellow visual guidance.</p></div>
+        </div>
+      </section>
+
+      <section id="recommendView" class="view">
+        <div class="section-head"><div><span class="eyebrow">PERSONALIZED TRAINING</span><h2>Build your workout.</h2><p>Give the coach a few details. It will score exercises from the library and create a weekly plan.</p></div></div>
+        <form id="recommendForm" class="form-card">
+          <div class="form-section">
+            <label>Your goal</label>
+            <div class="choice-grid">
+              <button type="button" class="choice selected" data-field="goal" data-value="muscle gain">Muscle gain</button>
+              <button type="button" class="choice" data-field="goal" data-value="strength">Strength</button>
+              <button type="button" class="choice" data-field="goal" data-value="fat loss">Fat loss</button>
+              <button type="button" class="choice" data-field="goal" data-value="general fitness">General fitness</button>
+              <button type="button" class="choice" data-field="goal" data-value="mobility">Mobility</button>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-section"><label>Experience</label><select id="experience"><option>beginner</option><option>intermediate</option><option>advanced</option></select></div>
+            <div class="form-section"><label>Days per week</label><input id="days" type="number" min="1" max="7" value="3"></div>
+            <div class="form-section"><label>Exercises / day</label><input id="perDay" type="number" min="3" max="10" value="6"></div>
+          </div>
+          <div class="form-section">
+            <label for="workoutSplit">Choose your workout split</label>
+            <select id="workoutSplit">
+              <option value="auto">Let FormFit decide (recommended)</option>
+              <option value="push_pull_legs">Push • Pull • Legs</option>
+              <option value="full_body">Full Body</option>
+              <option value="upper_lower">Upper • Lower</option>
+              <option value="one_body_part">One body part a day</option>
+              <option value="bro_split">Chest • Back • Shoulders • Arms • Legs</option>
+            </select>
+            <small>FormFit will adapt the split to your selected training days.</small>
+          </div>
+          <div class="form-section">
+            <label>Available equipment</label>
+            <small>Select only the equipment you actually have. FormFit will not assume Bodyweight.</small>
+            <div class="choice-grid compact" id="equipmentChoices">
+              <button type="button" class="choice" data-value="Bodyweight">Bodyweight</button>
+              <button type="button" class="choice" data-value="Dumbbells">Dumbbells</button>
+              <button type="button" class="choice" data-value="Barbell">Barbell</button>
+              <button type="button" class="choice" data-value="Cable">Cable</button>
+              <button type="button" class="choice" data-value="Machine">Machine</button>
+              <button type="button" class="choice" data-value="Resistance Band">Resistance Band</button>
+              <button type="button" class="choice" data-value="Kettlebell">Kettlebell</button>
+              <button type="button" class="choice" data-value="Bench">Bench</button>
+            </div>
+          </div>
+          <button class="primary-btn big submit-btn" type="submit">Generate my plan <span>→</span></button>
+        </form>
+        <div id="planResult" class="plan-result"></div>
+      </section>
+
+
+      <section id="winterArcView" class="view">
+        <div class="winter-arc-hero">
+          <div>
+            <span class="pill">SEASONAL RESET • OCT 1 → JAN 1</span>
+            <h2>Winter Arc.<br><em>Lock in before the new year.</em></h2>
+            <p>Build a realistic 90-day routine around training, food, recovery and consistency. Winter Arc is a social-media self-improvement concept, not a fixed medical or fitness protocol.</p>
+          </div>
+          <div class="winter-arc-badge">
+            <span>YOUR ARC</span>
+            <strong id="winterArcDays">92</strong>
+            <small>days</small>
+          </div>
+        </div>
+
+        <div class="winter-arc-grid">
+          <article class="winter-info-card winter-info-main">
+            <span class="eyebrow">WHAT THIS IS</span>
+            <h3>The smart version of Winter Arc</h3>
+            <p>Use the season to build habits you can actually keep after January. FormFit focuses on progressive training, enough food, sleep, recovery and repeatable routines—not punishment.</p>
+            <div class="winter-principles">
+              <div><b>Train</b><span>Strength + conditioning matched to your split, level and equipment.</span></div>
+              <div><b>Fuel</b><span>Personalized meals that support your selected goal and food preferences.</span></div>
+              <div><b>Recover</b><span>Rest days, sleep and manageable volume are part of the plan.</span></div>
+              <div><b>Repeat</b><span>Consistency beats extreme rules that collapse after a week.</span></div>
+            </div>
+          </article>
+
+          <article class="winter-info-card">
+            <span class="eyebrow">DO</span>
+            <h3>What to do</h3>
+            <ul class="winter-list good">
+              <li>Follow a repeatable training schedule.</li>
+              <li>Keep protein-rich, minimally processed foods in rotation.</li>
+              <li>Use walking/cardio to build baseline activity.</li>
+              <li>Keep a consistent sleep routine.</li>
+              <li>Track workouts and adjust from real performance.</li>
+            </ul>
+          </article>
+
+          <article class="winter-info-card">
+            <span class="eyebrow">DON'T</span>
+            <h3>What not to do</h3>
+            <ul class="winter-list bad">
+              <li>Do not treat exhaustion as progress.</li>
+              <li>Do not copy extreme influencer challenges blindly.</li>
+              <li>Do not remove food groups without a reason.</li>
+              <li>Do not train hard every day just to keep a streak.</li>
+              <li>Do not sacrifice sleep for early-morning “grind”.</li>
+            </ul>
+          </article>
+        </div>
+
+        <form id="winterArcForm" class="winter-builder">
+          <div class="section-head"><div><span class="eyebrow">BUILD YOUR ARC</span><h3>Tell FormFit what your winter is for.</h3><p>These choices control the workout split, training focus and meal-plan direction.</p></div></div>
+          <div class="winter-form-grid">
+            <div class="meal-field"><label for="winterGoal">MAIN GOAL</label><select id="winterGoal"><option value="muscle gain">Build muscle</option><option value="strength">Get stronger</option><option value="fat loss">Lose fat</option><option value="general fitness">Improve fitness</option><option value="mobility">Mobility + movement</option></select></div>
+            <div class="meal-field"><label for="winterReason">WHY THIS WINTER ARC?</label><select id="winterReason"><option value="physique">Improve my physique</option><option value="strength">Become stronger</option><option value="consistency">Build discipline and consistency</option><option value="fitness">Improve stamina and fitness</option><option value="sport">Support a sport or performance goal</option></select></div>
+            <div class="meal-field"><label for="winterSplit">TRAINING SPLIT</label><select id="winterSplit"><option value="auto">Let FormFit decide</option><option value="push_pull_legs">Push • Pull • Legs</option><option value="full_body">Full Body</option><option value="upper_lower">Upper • Lower</option><option value="one_body_part">One body part a day</option><option value="bro_split">Chest • Back • Shoulders • Arms • Legs</option></select></div>
+            <div class="meal-field"><label for="winterDays">TRAINING DAYS / WEEK</label><input id="winterDays" type="number" min="2" max="6" value="4"></div>
+            <div class="meal-field"><label for="winterMinutes">MINUTES / SESSION</label><input id="winterMinutes" type="number" min="20" max="120" value="60"></div>
+            <div class="meal-field"><label for="winterDietPreference">FOOD STYLE</label><select id="winterDietPreference"><option value="vegetarian">Vegetarian</option><option value="egg">Egg</option><option value="non_vegetarian">Non-Vegetarian</option></select></div>
+          </div>
+
+          <div class="form-section winter-equipment-block">
+            <label>AVAILABLE EQUIPMENT</label>
+            <small>Select only what you actually have. Winter Arc will not silently add Bodyweight.</small>
+            <div class="choice-grid compact" id="winterEquipmentChoices">
+              <button type="button" class="choice" data-winter-equipment="Bodyweight">Bodyweight</button>
+              <button type="button" class="choice" data-winter-equipment="Dumbbells">Dumbbells</button>
+              <button type="button" class="choice" data-winter-equipment="Barbell">Barbell</button>
+              <button type="button" class="choice" data-winter-equipment="Cable">Cable</button>
+              <button type="button" class="choice" data-winter-equipment="Machine">Machine</button>
+              <button type="button" class="choice" data-winter-equipment="Resistance Band">Resistance Band</button>
+              <button type="button" class="choice" data-winter-equipment="Kettlebell">Kettlebell</button>
+              <button type="button" class="choice" data-winter-equipment="Bench">Bench</button>
+            </div>
+          </div>
+
+          <div class="winter-habits">
+            <div><b>Daily Arc rules</b><span>Choose the habits you want FormFit to keep visible.</span></div>
+            <label><input type="checkbox" name="winterHabit" value="training" checked> Complete scheduled training / active recovery</label>
+            <label><input type="checkbox" name="winterHabit" value="protein" checked> Hit your nutrition target</label>
+            <label><input type="checkbox" name="winterHabit" value="steps" checked> Get regular daily movement</label>
+            <label><input type="checkbox" name="winterHabit" value="sleep" checked> Protect your sleep routine</label>
+            <label><input type="checkbox" name="winterHabit" value="screen"> Add a screen-free / reading block</label>
+          </div>
+
+          <button class="primary-btn big submit-btn" type="submit">Build my Winter Arc <span>→</span></button>
+        </form>
+
+        <div id="winterArcResult" class="winter-result"></div>
+      </section>
+
+      <section id="mealView" class="view">
+        <div class="section-head meal-head">
+          <div>
+            <span class="eyebrow">PERSONALIZED COUNTRY-BASED NUTRITION</span>
+            <h2>Build your meal plan.</h2>
+            <p>Tell FormFit your age, weight, goal and food preference. You will receive a practical local-food plan matched to your country, goal and food preferences.</p>
+          </div>
+        </div>
+
+        <form id="mealPlanForm" class="meal-form-card">
+          <div class="meal-form-grid">
+            <div class="meal-field">
+              <label for="mealAge">AGE</label>
+              <input id="mealAge" type="number" min="16" max="80" inputmode="numeric" placeholder="e.g. 20" required>
+              <small>Enter age in years.</small>
+            </div>
+            <div class="meal-field">
+              <label for="mealWeight">WEIGHT (KG)</label>
+              <input id="mealWeight" type="number" min="35" max="200" step="0.1" inputmode="decimal" placeholder="e.g. 65" required>
+              <small>Current body weight.</small>
+            </div>
+          </div>
+
+          <div class="meal-choice-section">
+            <label>GOAL</label>
+            <div class="meal-choice-grid" id="mealGoalChoices">
+              <button type="button" class="meal-choice selected" data-meal-field="goal" data-value="bulking">
+                <strong>Bulking</strong><span>Calorie surplus + carbs</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="muscle_gain">
+                <strong>Muscle Gain</strong><span>High protein + balanced</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="cutting">
+                <strong>Cutting</strong><span>Controlled calories + filling foods</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="muscle_loss">
+                <strong>Muscle Loss</strong><span>Deficit + high protein</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="goal" data-value="maintaining">
+                <strong>Maintaining</strong><span>Balanced everyday intake</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="meal-choice-section">
+            <label>FOOD PREFERENCE</label>
+            <div class="meal-choice-grid meal-preference-grid" id="mealPreferenceChoices">
+              <button type="button" class="meal-choice selected" data-meal-field="preference" data-value="vegetarian">
+                <strong>Vegetarian</strong><span>Dal • paneer • curd • soy</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="preference" data-value="egg">
+                <strong>Egg</strong><span>Vegetarian foods + eggs</span>
+              </button>
+              <button type="button" class="meal-choice" data-meal-field="preference" data-value="non_vegetarian">
+                <strong>Non-Vegetarian</strong><span>Chicken • eggs • fish</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="diet-memory-card">
+            <div class="diet-memory-head">
+              <div>
+                <span class="eyebrow">YOUR FOOD DNA</span>
+                <h3>Teach FormFit what you actually enjoy.</h3>
+              </div>
+              <span class="diet-memory-badge" id="dietMemoryStatus">Ready to learn</span>
+            </div>
+            <div class="diet-memory-grid">
+              <div class="meal-field">
+                <label for="dietFavoriteFoods">FAVORITE FOODS</label>
+                <input id="dietFavoriteFoods" type="text" placeholder="e.g. paneer, poha, chicken">
+                <small>Foods you would happily eat again.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietDislikedFoods">DISLIKED FOODS</label>
+                <input id="dietDislikedFoods" type="text" placeholder="e.g. oats, tofu">
+                <small>Foods FormFit should reduce or replace.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietAvoidFoods">FOODS TO AVOID</label>
+                <input id="dietAvoidFoods" type="text" placeholder="e.g. peanuts, fish">
+                <small>Hard exclusions or foods you do not want suggested.</small>
+              </div>
+              <div class="meal-field">
+                <label for="dietStyleNote">MEAL STYLE</label>
+                <input id="dietStyleNote" type="text" placeholder="e.g. simple, spicy, quick to cook">
+                <small>Practical preferences FormFit should remember.</small>
+              </div>
+            </div>
+          </div>
+
+          <button class="primary-btn big submit-btn meal-generate-btn" type="submit">
+            Generate my country meal plan <span>→</span>
+          </button>
+        </form>
+
+        <div id="mealPlanResult" class="meal-plan-result" aria-live="polite"></div>
+        <section class="saved-diets-panel" aria-label="Saved diets">
+          <div class="saved-diets-head">
+            <div>
+              <span class="eyebrow">YOUR DIET LIBRARY</span>
+              <h3>Saved & favorite plans</h3>
+            </div>
+            <button type="button" class="ghost-btn" id="refreshSavedDiets">Refresh</button>
+          </div>
+          <div id="savedDietList" class="saved-diet-list">
+            <div class="saved-diet-empty">Generate a plan and save your favorite version here.</div>
+          </div>
+        </section>
+      </section>
+
+      <section id="libraryView" class="view">
+        <div class="section-head library-head">
+          <div><span class="eyebrow">EXERCISE LIBRARY</span><h2>Choose your movement.</h2><p>Explore the library. Supported exercises can be sent to the form-check workflow.</p></div>
+          <div class="library-tools"><input id="searchInput" placeholder="Search exercise..."><select id="categoryFilter"><option value="">All categories</option></select></div>
+        </div>
+        <div id="exerciseGrid" class="exercise-grid"></div>
+      </section>
+
+      <section id="formView" class="view">
+        <div class="form-dashboard">
+          <div class="form-topline">
+            <div class="form-title-wrap">
+              <span class="eyebrow">FORM COACH</span>
+              <h2 id="selectedExerciseTitle">Select an exercise.</h2>
+            </div>
+            <div class="run-pill" id="runPill"><span></span> STATUS: <b>READY</b></div>
+          </div>
+
+          <div class="form-session-bar" id="selectedExerciseMeta">
+            SHOW YOUR FULL BODY • View: SIDE • Score: 0% • Reps: 0
+          </div>
+
+          <div class="form-main-grid">
+            <aside class="form-left-metrics">
+              <div class="metric-card score-card">
+                <span>POSTURE SCORE</span>
+                <div class="score-ring"><strong id="metricScore">0</strong><small>/100</small></div>
+                <em id="scoreLabel">READY</em>
+              </div>
+
+              <div class="metric-card">
+                <span>BACK ANGLE</span>
+                <strong id="metricBack">—</strong>
+                <em id="backState">CHECK</em>
+              </div>
+
+              <div class="premapped-demo-card" id="premappedDemoCard">
+                <div class="premapped-demo-head">
+                  <div>
+                    <span>REFERENCE DEMO</span>
+                    <strong id="premappedDemoTitle">Exercise Demo</strong>
+                  </div>
+                  <span class="premapped-demo-badge">READY</span>
+                </div>
+
+                <div class="premapped-demo-frame" id="premappedDemoFrame">
+                  <iframe
+                    id="premappedDemoFrameVideo"
+                    class="premapped-demo-iframe"
+                    title="Exercise reference demonstration"
+                    loading="eager"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+
+                <div class="premapped-demo-meta">
+                  <span id="premappedDemoSource">Reference demonstration</span>
+                </div>
+              </div>
+            </aside>
+
+            <div class="camera-card form-camera-card">
+              <div class="camera-placeholder" id="cameraArea">
+                <div class="camera-icon">◎</div>
+                <h3>Camera workspace</h3>
+                <p>Allow camera access to preview your position. The existing Python pose engine remains the authoritative form-check backend.</p>
+                <button class="primary-btn" id="cameraBtn">Enable camera</button>
+                <video id="cameraVideo" autoplay playsinline muted></video>
+              </div>
+            </div>
+
+            <aside class="form-coaching-card">
+              <div class="reps-card">
+                <div class="reps-card-head"><span>LIVE REPS</span><span class="reps-reset">↻</span></div>
+                <strong id="liveReps">0</strong>
+                <em>REPS COMPLETED</em>
+              </div>
+
+              <div class="panel-eyebrow">COACHING</div>
+              <div class="coach-status yellow" id="coachStatus">READY TO START</div>
+              <div class="feedback-list" id="feedbackList">
+                <div class="feedback-row"><span></span><b>Keep your movement controlled</b></div>
+                <div class="feedback-row"><span></span><b>Follow the yellow correction guide</b></div>
+                <div class="feedback-row"><span></span><b>Green means your current form is good</b></div>
+              </div>
+              <button class="primary-btn full" id="endSessionBtn">✓ End & Save Session</button>
+              <button class="secondary-btn full" id="backLibrary">← Choose another exercise</button>
+
+              <div class="mini-session-stats">
+                <div><span>CALORIES</span><strong id="caloriesValue">0</strong><small>KCAL</small></div>
+                <div><span>TIME</span><strong id="timeValue">00:00</strong><small>SESSION</small></div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="tip-strip">
+            <div class="tip-icon">✦</div>
+            <div><span>TIP:</span> <b id="tipText">Keep your movement controlled and follow the correction guide.</b></div>
+          </div>
+
+          <div class="bottom-status">
+            <div><span class="live-dot"></span> STATUS: <b id="bottomStatus">READY</b></div>
+            <div>AI ANALYSIS <span class="analysis-meter"><i id="analysisMeter"></i></span> <b id="analysisValue">LIVE</b></div>
+          </div>
+
+          <div class="hidden-form-copy" aria-hidden="true">
+            <span id="formModeName">READY</span>
+            <span id="guideText">Follow the yellow dotted correction guide.</span>
+            <span id="metricPosition">CHECK</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="historyView" class="view">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">YOUR PROGRESS</span>
+            <h2>My workout history.</h2>
+            <p>Your form sessions and AI workout plans are saved to your account.</p>
+          </div>
+          <button class="secondary-btn" id="refreshHistory">↻ Refresh</button>
+        </div>
+        <div class="history-summary" id="historySummary"></div>
+        <div class="history-list" id="historyList">
+          <div class="day-card"><strong>Loading your history…</strong></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div class="country-modal-overlay" id="countryModalOverlay" aria-hidden="true">
+    <section class="country-modal" role="dialog" aria-modal="true" aria-labelledby="countryModalTitle">
+      <div class="country-modal-head">
+        <div><span class="account-sheet-eyebrow">PERSONALIZATION</span><h2 id="countryModalTitle">Choose your country</h2></div>
+        <button class="account-sheet-close" id="countryModalClose" type="button" aria-label="Close country selector">×</button>
+      </div>
+      <p class="country-modal-copy">Your country will be used for local food and diet recommendations across FormFit.</p>
+      <label class="country-select-label" for="formfitCountrySelect">COUNTRY</label>
+      <select id="formfitCountrySelect" class="country-select"><option value="IN">India</option><option value="US">United States</option><option value="GB">United Kingdom</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="DE">Germany</option><option value="FR">France</option><option value="IT">Italy</option><option value="ES">Spain</option><option value="MX">Mexico</option><option value="BR">Brazil</option><option value="JP">Japan</option><option value="CN">China</option><option value="KR">South Korea</option><option value="TH">Thailand</option><option value="ID">Indonesia</option><option value="AE">United Arab Emirates</option><option value="SA">Saudi Arabia</option><option value="TR">Turkey</option><option value="GR">Greece</option><option value="EG">Egypt</option><option value="ZA">South Africa</option><option value="NG">Nigeria</option><option value="PK">Pakistan</option><option value="BD">Bangladesh</option><option value="NP">Nepal</option><option value="LK">Sri Lanka</option><option value="PH">Philippines</option><option value="VN">Vietnam</option><option value="RU">Russia</option></select>
+      <div class="country-modal-actions">
+        <button class="secondary-btn" id="countryModalCancel" type="button">Cancel</button>
+        <button class="primary-btn" id="countryModalSave" type="button">Save country →</button>
+      </div>
+      <div class="country-modal-status" id="countryModalStatus" role="status" aria-live="polite"></div>
+    </section>
+  </div>
+
+
+  <div class="country-modal-overlay" id="countryModalOverlay" aria-hidden="true">
+    <section class="country-modal" role="dialog" aria-modal="true" aria-labelledby="countryModalTitle">
+      <div class="country-modal-head">
+        <div><span class="account-sheet-eyebrow">PERSONALIZATION</span><h2 id="countryModalTitle">Choose your country</h2></div>
+        <button class="account-sheet-close" id="countryModalClose" type="button" aria-label="Close country selector">×</button>
+      </div>
+      <p class="country-modal-copy">Your country will be used for local food and diet recommendations across FormFit.</p>
+      <label class="country-select-label" for="formfitCountrySelect">COUNTRY</label>
+      <select id="formfitCountrySelect" class="country-select"><option value="IN">India</option><option value="US">United States</option><option value="GB">United Kingdom</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="DE">Germany</option><option value="FR">France</option><option value="IT">Italy</option><option value="ES">Spain</option><option value="MX">Mexico</option><option value="BR">Brazil</option><option value="JP">Japan</option><option value="CN">China</option><option value="KR">South Korea</option><option value="TH">Thailand</option><option value="ID">Indonesia</option><option value="AE">United Arab Emirates</option><option value="SA">Saudi Arabia</option><option value="TR">Turkey</option><option value="GR">Greece</option><option value="EG">Egypt</option><option value="ZA">South Africa</option><option value="NG">Nigeria</option><option value="PK">Pakistan</option><option value="BD">Bangladesh</option><option value="NP">Nepal</option><option value="LK">Sri Lanka</option><option value="PH">Philippines</option><option value="VN">Vietnam</option><option value="RU">Russia</option></select>
+      <div class="country-modal-actions">
+        <button class="secondary-btn" id="countryModalCancel" type="button">Cancel</button>
+        <button class="primary-btn" id="countryModalSave" type="button">Save country →</button>
+      </div>
+      <div class="country-modal-status" id="countryModalStatus" role="status" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-card">
+      <div class="auth-brand"><div class="brand-mark">F</div><div><strong>FORMFIT</strong><small>AI FITNESS COACH</small></div></div>
+      <span class="eyebrow">PRIVATE FITNESS ACCOUNT</span>
+      <h2 id="authTitle">Welcome back.</h2>
+      <p id="authSubtitle">Sign in to keep your workouts, reps and progress saved.</p>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-mode="login">Login</button>
+        <button class="auth-tab" data-auth-mode="register">Create account</button>
+      </div>
+
+      <form id="authForm" autocomplete="on">
+        <div class="country-gate-card">
+          <label for="authCountry">Country / region</label>
+          <select id="authCountry" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="IN">🇮🇳 India</option><option value="US">🇺🇸 United States</option><option value="GB">🇬🇧 United Kingdom</option><option value="CA">🇨🇦 Canada</option><option value="AU">🇦🇺 Australia</option><option value="AE">🇦🇪 UAE</option><option value="DE">🇩🇪 Germany</option><option value="JP">🇯🇵 Japan</option><option value="MX">🇲🇽 Mexico</option><option value="BR">🇧🇷 Brazil</option><option value="FR">🇫🇷 France</option><option value="IT">🇮🇹 Italy</option><option value="ES">🇪🇸 Spain</option><option value="CN">🇨🇳 China</option><option value="KR">🇰🇷 South Korea</option><option value="TH">🇹🇭 Thailand</option><option value="ID">🇮🇩 Indonesia</option><option value="TR">🇹🇷 Turkey</option><option value="GR">🇬🇷 Greece</option><option value="EG">🇪🇬 Egypt</option><option value="ZA">🇿🇦 South Africa</option><option value="NG">🇳🇬 Nigeria</option><option value="PK">🇵🇰 Pakistan</option><option value="BD">🇧🇩 Bangladesh</option><option value="NP">🇳🇵 Nepal</option><option value="LK">🇱🇰 Sri Lanka</option><option value="PH">🇵🇭 Philippines</option><option value="VN">🇻🇳 Vietnam</option><option value="RU">🇷🇺 Russia</option><option value="OTHER">🌍 Other country</option>
+          </select>
+          <small>Meal ideas, food names and workout suggestions will be localized for this country.</small>
+        </div>
+        <label>Email address</label>
+        <input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label>Password</label>
+        <input id="authPassword" type="password" autocomplete="current-password" placeholder="Minimum 8 characters" minlength="8" required>
+        <label class="remember-login-row"><input id="rememberLogin" type="checkbox" checked> Remember me on this device</label>
+        <div class="auth-error" id="authError"></div>
+        <button class="primary-btn big" id="authSubmit" type="submit">Login & continue →</button>
+      </form>
+      <small class="auth-security">🔒 Passwords are stored as secure hashes. Your history belongs to your account.</small>
+    </div>
+  </div>
+
+  <style>.country-gate-card{margin:0 0 16px;padding:14px 16px;border:1px solid rgba(112,231,165,.25);border-radius:16px;background:rgba(112,231,165,.05)}.country-gate-card label{display:block;margin-bottom:8px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.country-gate-card select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line,#29434a);background:#07151a;color:var(--text,#eef7f3);font:inherit}.country-gate-card small{display:block;margin-top:8px;color:var(--muted,#8da5aa);line-height:1.45}</style>
+  <script src="app.js"></script>
+
+
+
+<script>
+/* FORMFIT PRO ACCOUNT UX
+   UI/session bridge only. AI pose/model/pipes logic remains in app.js. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+
+  async function session() {
+    try {
+      const r = await fetch("/api/auth/me", {
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+      return await r.json();
+    } catch (_) {
+      return { authenticated: false };
+    }
+  }
+
+  function showLogin() {
+    const overlay = $("#authOverlay");
+    if (!overlay) return;
+    overlay.classList.add("visible");
+    overlay.setAttribute("aria-hidden", "false");
+    const email = $("#authEmail");
+    if (email) setTimeout(() => email.focus(), 80);
+  }
+
+  function showHistory() {
+    const button = document.querySelector('[data-view="history"]');
+    if (button) {
+      button.click();
+      return;
+    }
+    const view = $("#historyView");
+    if (view) view.classList.add("active-view");
+  }
+
+  async function accountClick() {
+    const data = await session();
+    if (data.authenticated) showHistory();
+    else showLogin();
+  }
+
+  // Capture phase makes ACCOUNT work regardless of other UI listeners.
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("#accountBtn, .account-card");
+    if (!target || event.target.closest("#logoutBtn")) return;
+    event.preventDefault();
+    event.stopPropagation();
+    accountClick();
+  }, true);
+
+  // Professional first-visit auth gate.
+  async function firstVisitGate() {
+    const data = await session();
+    if (!data.authenticated) showLogin();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", firstVisitGate, {once: true});
+  } else {
+    firstVisitGate();
+  }
+})();
+</script>
+
+
+<script data-formfit-auth-tabs-fixed="1">
+/* FORMFIT AUTH TABS FIX — UI/auth only.
+   Does not touch pose, pipes, camera, exercise logic, or model. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const tabs = document.querySelectorAll(".auth-tab[data-auth-mode]");
+  const form = $("#authForm");
+  const overlay = $("#authOverlay");
+  const title = $("#authTitle");
+  const subtitle = $("#authSubtitle");
+  const submit = $("#authSubmit");
+  const error = $("#authError");
+  const email = $("#authEmail");
+  const password = $("#authPassword");
+
+  let mode = "login";
+
+  function setMode(nextMode) {
+    mode = nextMode === "register" ? "register" : "login";
+
+    tabs.forEach(tab => {
+      tab.classList.toggle(
+        "active",
+        tab.dataset.authMode === mode
+      );
+    });
+
+    if (title) {
+      title.textContent =
+        mode === "register"
+          ? "Create your account."
+          : "Welcome back.";
+    }
+
+    if (subtitle) {
+      subtitle.textContent =
+        mode === "register"
+          ? "Create your private account to save workouts, reps and progress."
+          : "Sign in to keep your workouts, reps and progress saved.";
+    }
+
+    if (submit) {
+      submit.textContent =
+        mode === "register"
+          ? "Create account →"
+          : "Login & continue →";
+    }
+
+    if (password) {
+      password.autocomplete =
+        mode === "register"
+          ? "new-password"
+          : "current-password";
+    }
+
+    if (error) error.textContent = "";
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setMode(tab.dataset.authMode);
+      if (email) setTimeout(() => email.focus(), 30);
+    });
+  });
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const userEmail = email?.value.trim() || "";
+    const userPassword = password?.value || "";
+
+    if (error) error.textContent = "";
+
+    if (!userEmail || !userPassword) {
+      if (error) error.textContent = "Enter your email and password.";
+      return;
+    }
+
+    if (mode === "register" && userPassword.length < 8) {
+      if (error) error.textContent = "Password must be at least 8 characters.";
+      return;
+    }
+
+    const endpoint =
+      mode === "register"
+        ? "/api/auth/register"
+        : "/api/auth/login";
+
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent =
+        mode === "register"
+          ? "Creating account…"
+          : "Signing in…";
+    }
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        credentials: "same-origin",
+        body: JSON.stringify({
+          email: userEmail,
+          password: userPassword,
+          country: $("#authCountry")?.value || "IN"
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        if (error) {
+          error.textContent =
+            data.error ||
+            (mode === "register"
+              ? "Could not create account."
+              : "Incorrect email or password.");
+        }
+        return;
+      }
+
+      try { localStorage.setItem("formfit_country", $("#authCountry")?.value || "IN"); } catch (_) {}
+
+      if (overlay) {
+        overlay.classList.remove("visible");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+
+      // Keep the existing dashboard/account UI in sync.
+      const accountEmail = $("#accountEmail");
+      const accountAvatar = $("#accountAvatar");
+      const savedEmail =
+        data?.user?.email || userEmail;
+
+      if (accountEmail) accountEmail.textContent = savedEmail;
+      if (accountAvatar) {
+        accountAvatar.textContent =
+          savedEmail.charAt(0).toUpperCase();
+      }
+
+      form.reset();
+      setMode("login");
+    } catch (_) {
+      if (error) {
+        error.textContent =
+          "Server connection failed. Make sure the FormFit server is running.";
+      }
+    } finally {
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent =
+          mode === "register"
+            ? "Create account →"
+            : "Login & continue →";
+      }
+    }
+  });
+
+  setMode("login");
+})();
+</script>
+
+
+<script data-formfit-auth-boot-safe="1">
+/* FORMFIT AUTH BOOT SAFETY — auth UI only.
+   Existing login/register/logout logic is preserved. */
+(() => {
+  const $ = (s) => document.querySelector(s);
+
+  async function syncAuthUI() {
+    const overlay = $("#authOverlay");
+    const emailEl = $("#accountEmail");
+    const avatarEl = $("#accountAvatar");
+
+    if (!overlay) return;
+
+    try {
+      const response = await fetch("/api/auth/me", {
+        credentials: "same-origin",
+        cache: "no-store"
+      });
+
+      const data = await response.json();
+
+      if (data?.authenticated && data?.user?.email) {
+        const email = String(data.user.email);
+        if (emailEl) emailEl.textContent = email;
+        if (avatarEl) avatarEl.textContent = email.charAt(0).toUpperCase();
+
+        overlay.classList.remove("visible");
+        overlay.setAttribute("aria-hidden", "true");
+      } else {
+        if (emailEl) emailEl.textContent = "Not signed in";
+        if (avatarEl) avatarEl.textContent = "U";
+
+        overlay.classList.add("visible");
+        overlay.setAttribute("aria-hidden", "false");
+      }
+    } catch (_) {
+      // Keep the existing sign-in UI available during a cold-start/transient failure.
+      overlay.classList.add("visible");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncAuthUI, { once: true });
+  } else {
+    syncAuthUI();
+  }
+})();
+</script>
+
+
+<script data-formfit-country-selector="1">
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const accountOverlay = $("#accountSheetOverlay");
+  const countryOverlay = $("#countryModalOverlay");
+  const openBtn = $("#accountCountryBtn");
+  const closeBtn = $("#countryModalClose");
+  const cancelBtn = $("#countryModalCancel");
+  const saveBtn = $("#countryModalSave");
+  const select = $("#formfitCountrySelect");
+  const summary = $("#accountCountrySummary");
+  if (!countryOverlay || !openBtn || !select) return;
+
+  const countries = {
+    IN:"India",US:"United States",GB:"United Kingdom",CA:"Canada",AU:"Australia",
+    DE:"Germany",FR:"France",IT:"Italy",ES:"Spain",MX:"Mexico",BR:"Brazil",
+    JP:"Japan",CN:"China",KR:"South Korea",TH:"Thailand",ID:"Indonesia",
+    AE:"United Arab Emirates",SA:"Saudi Arabia",TR:"Turkey",GR:"Greece",EG:"Egypt",
+    ZA:"South Africa",NG:"Nigeria",PK:"Pakistan",BD:"Bangladesh",NP:"Nepal",
+    LK:"Sri Lanka",PH:"Philippines",VN:"Vietnam",RU:"Russia"
+  };
+  const getCountry = () => {
+    try { return localStorage.getItem("formfit_country") || "IN"; } catch (_) { return "IN"; }
+  };
+  const setCountry = (code) => {
+    try { localStorage.setItem("formfit_country", code); } catch (_) {}
+    const name = countries[code] || "India";
+    if (summary) summary.textContent = name + " · Used for food and diet suggestions";
+    document.dispatchEvent(new CustomEvent("formfit:country-changed", {detail:{code, name}}));
+    window.dispatchEvent(new CustomEvent("formfit:country-changed", {detail:{code, name}}));
+  };
+  function closeCountry() {
+    countryOverlay.classList.remove("open","visible");
+    countryOverlay.setAttribute("aria-hidden","true");
+  }
+  function openCountry() {
+    select.value = getCountry();
+    countryOverlay.classList.add("open","visible");
+    countryOverlay.setAttribute("aria-hidden","false");
+    setTimeout(() => select.focus(), 40);
+  }
+  openBtn.addEventListener("click", (e) => { e.preventDefault(); openCountry(); });
+  closeBtn?.addEventListener("click", closeCountry);
+  cancelBtn?.addEventListener("click", closeCountry);
+  saveBtn?.addEventListener("click", () => {
+    setCountry(select.value);
+    const status = $("#countryModalStatus");
+    if (status) status.textContent = "Country saved: " + (countries[select.value] || "India");
+    setTimeout(closeCountry, 450);
+  });
+  countryOverlay.addEventListener("click", (e) => { if (e.target === countryOverlay) closeCountry(); });
+  setCountry(getCountry());
+})();
+</script>
+
+<script data-formfit-country-fix="1">
+(function () {
+  function initCountryFix() {
+    const open = document.getElementById("accountCountryBtn");
+    const overlay = document.getElementById("countryModalOverlay");
+    const select = document.getElementById("formfitCountrySelect");
+    const save = document.getElementById("countryModalSave");
+    const close = document.getElementById("countryModalClose");
+    const cancel = document.getElementById("countryModalCancel");
+    const summary = document.getElementById("accountCountrySummary");
+    if (!open || !overlay || !select) return;
+    const countries = {};
+    Array.from(select.options).forEach(function (option) { countries[option.value] = option.textContent.trim(); });
+    function current() { try { return localStorage.getItem("formfit_country") || "IN"; } catch (_) { return "IN"; } }
+    function update(code) {
+      const name = countries[code] || countries.IN || "India";
+      try { localStorage.setItem("formfit_country", code); } catch (_) {}
+      if (summary) summary.textContent = name + " · Used for food and diet suggestions";
+      document.dispatchEvent(new CustomEvent("formfit:country-changed", {detail:{code:code,name:name}}));
+    }
+    function show() { select.value=current(); overlay.classList.add("open","visible"); overlay.setAttribute("aria-hidden","false"); }
+    function hide() { overlay.classList.remove("open","visible"); overlay.setAttribute("aria-hidden","true"); }
+    open.onclick=function(e){e.preventDefault();e.stopPropagation();show();};
+    if(save) save.onclick=function(){update(select.value);const s=document.getElementById("countryModalStatus");if(s)s.textContent="Country saved: "+(countries[select.value]||"India");setTimeout(hide,450);};
+    if(close) close.onclick=hide;
+    if(cancel) cancel.onclick=hide;
+    overlay.onclick=function(e){if(e.target===overlay)hide();};
+    update(current());
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",initCountryFix,{once:true});
+  else initCountryFix();
+})();
+</script>
+
+<script data-formfit-remember-login="1">
+(() => {
+  const email = document.querySelector('#authEmail');
+  const remember = document.querySelector('#rememberLogin');
+  if (email) { try { email.value = localStorage.getItem('formfit_saved_email') || ''; } catch (_) {} }
+  if (remember) { try { remember.checked = localStorage.getItem('formfit_remember_login') !== '0'; } catch (_) {} }
+  document.querySelector('#authForm')?.addEventListener('submit', () => {
+    try {
+      if (remember?.checked) {
+        localStorage.setItem('formfit_saved_email', email?.value.trim() || '');
+        localStorage.setItem('formfit_remember_login', '1');
+      } else {
+        localStorage.removeItem('formfit_saved_email');
+        localStorage.setItem('formfit_remember_login', '0');
+      }
+    } catch (_) {}
+  }, true);
+})();
+</script>
+</body>
+</html>

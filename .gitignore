@@ -1,0 +1,25 @@
+venv/
+venv_train/
+venv_formfit/
+__pycache__/
+*.pyc
+
+.env
+.venv/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+*.db
+*.sqlite
+*.sqlite3
+*.secret
+.formfit_secret_key
+
+* - Copy.*
+*BACKUP*
+*EXACT_REFERENCE*
+README - Copy.*
+INTEGRATION_README*

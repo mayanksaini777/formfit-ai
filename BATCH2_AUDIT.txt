@@ -1,0 +1,9 @@
+FORMFIT BATCH 2 — VERTICAL PULL + ROW VARIANTS
+
+Changed active file: pose_engine.py only.
+
+Added dedicated analysis routes for: pull_up, chin_up, assisted_pull_up, lat_pulldown, close_grip_lat_pulldown, straight_arm_pulldown, seated_cable_row, chest_supported_row, barbell_row, pendlay_row, t_bar_row, single_arm_dumbbell_row.
+
+Existing bicep/squat/shoulder/row/camera/pipe/stability logic was preserved.
+
+Validation: Python AST compile PASS; 12-exercise routing smoke test PASS; existing-core substring preservation PASS.

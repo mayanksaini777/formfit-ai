@@ -1,0 +1,54 @@
+--- a/pose_engine.py
++++ b/pose_engine.py
+@@ -2285,6 +2285,24 @@
+ 
+ 
+ 
++def analyze_pec_deck(landmarks, width, height):
++    """Dedicated Pec Deck analyzer.
++
++    The camera can reliably observe the same front-view arm-opening/closing
++    geometry used by chest fly. Keep the proven geometry, but expose
++    exercise-specific coaching so Pec Deck is no longer routed as a generic
++    alias in the dispatch layer.
++    """
++    result = analyze_chest_fly(landmarks, width, height)
++    if result.status == "green":
++        result.message = "PEC DECK FORM GOOD"
++    elif result.status == "yellow":
++        result.message = "CONTROL PEC DECK RANGE"
++    elif result.status == "red":
++        result.message = "KEEP BOTH ARMS EVEN"
++    return result
++
++
+ # ============================================================
+ # DISPATCH
+ # ============================================================
+@@ -2447,7 +2465,6 @@
+     "dumbbell_bench_press": "dumbbell_bench_press",
+     "close_grip_bench_press": "close_grip_bench_press",
+     "high_cable_crossover": "cable_crossover",
+-    "pec_deck": "chest_fly",
+     "dumbbell_pullover": "chest_fly",
+     "decline_bench_press": "decline_bench_press",
+     "incline_bench_press": "incline_bench_press",
+@@ -2670,7 +2687,7 @@
+         "decline_bench_press", "incline_bench_press", "dumbbell_bench_press",
+         "close_grip_bench_press", "push_up_wide_grip", "push_up_diamond",
+         "incline_push_up", "decline_push_up", "chest_press_machine",
+-        "cable_crossover", "low_cable_crossover",
++        "cable_crossover", "low_cable_crossover", "pec_deck",
+     }:
+         routed = _run_equivalent(exercise, landmarks, width, height)
+         if routed is None:
+@@ -2772,6 +2789,9 @@
+ 
+     if exercise == "chest_press_machine":
+         return finish(analyze_chest_press_machine(landmarks, width, height))
++
++    if exercise == "pec_deck":
++        return finish(analyze_pec_deck(landmarks, width, height))
+ 
+     if exercise == "cable_crossover":
+         return finish(analyze_cable_crossover(landmarks, width, height))

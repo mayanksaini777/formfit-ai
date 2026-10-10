@@ -1,0 +1,35 @@
+--- app.js (before)
++++ app.js (after)
+@@ -66,7 +66,8 @@
+ 
+ const state = {
+   goal: "muscle gain",
+-  equipment: ["Bodyweight"]
++  equipment: ["Bodyweight"],
++  split: "auto"
+ };
+ 
+ const workoutMemory = {
+@@ -2699,6 +2700,14 @@
+       };
+     });
+ 
++  const splitSelect = $("#workoutSplit");
++  if (splitSelect) {
++    splitSelect.value = state.split;
++    splitSelect.addEventListener("change", () => {
++      state.split = splitSelect.value;
++    });
++  }
++
+   $("#recommendForm")
+     .addEventListener(
+       "submit",
+@@ -3186,6 +3195,7 @@
+     experience: $("#experience").value,
+     days_per_week: Number($("#days").value),
+     exercises_per_day: Number($("#perDay").value),
++    split: state.split || "auto",
+     equipment: state.equipment,
+     target_muscles: []
+   };

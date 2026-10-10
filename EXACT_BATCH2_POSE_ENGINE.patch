@@ -1,0 +1,277 @@
+--- pose_engine.py (V6)
++++ pose_engine.py (V7 Batch 2)
+@@ -2402,6 +2402,179 @@
+ 
+ 
+ 
++
++# ============================================================
++# NEXT BATCH — EXERCISE-SPECIFIC ANALYZERS
++# ============================================================
++
++
++def _best_side_pose(lm, width, height):
++    candidates = []
++    for label, sid, hid, kid, aid in (
++        ("LEFT", LEFT_SHOULDER, LEFT_HIP, LEFT_KNEE, LEFT_ANKLE),
++        ("RIGHT", RIGHT_SHOULDER, RIGHT_HIP, RIGHT_KNEE, RIGHT_ANKLE),
++    ):
++        ids = (sid, hid, kid, aid)
++        if all(visible(lm, i, 0.45) for i in ids):
++            score = sum(float(getattr(lm[i], "visibility", 0.0)) for i in ids)
++            candidates.append((score, label, sid, hid, kid, aid))
++    return max(candidates, key=lambda x: x[0]) if candidates else None
++
++
++def _analyze_vertical_pull(landmarks, width, height, exercise):
++    required = (LEFT_SHOULDER, LEFT_ELBOW, LEFT_WRIST,
++                RIGHT_SHOULDER, RIGHT_ELBOW, RIGHT_WRIST)
++    if not all(visible(landmarks, i, 0.45) for i in required):
++        return FormResult("red", "KEEP BOTH ARMS VISIBLE", 0, {}, [], [], "FRONT", False)
++    ls = xy(landmarks, LEFT_SHOULDER, width, height)
++    le = xy(landmarks, LEFT_ELBOW, width, height)
++    lw = xy(landmarks, LEFT_WRIST, width, height)
++    rs = xy(landmarks, RIGHT_SHOULDER, width, height)
++    re_ = xy(landmarks, RIGHT_ELBOW, width, height)
++    rw = xy(landmarks, RIGHT_WRIST, width, height)
++    angles = {}
++    left_elbow = angle(ls, le, lw)
++    right_elbow = angle(rs, re_, rw)
++    vals = [v for v in (left_elbow, right_elbow) if v is not None]
++    if vals:
++        angles["elbow"] = sum(vals) / len(vals)
++    pipes = [(ls, le, "green"), (le, lw, "green"), (rs, re_, "green"), (re_, rw, "green")]
++    status, score = "green", 96
++    message = f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD"
++    targets = []
++    if len(vals) == 2 and abs(left_elbow - right_elbow) > 22:
++        status, score, message = "yellow", 76, "KEEP BOTH ARMS MOVING EVENLY"
++        targets.extend([(le, (ls[0], le[1]), "LEFT ELBOW PATH"), (re_, (rs[0], re_[1]), "RIGHT ELBOW PATH")])
++    return FormResult(status, message, score, angles, pipes, targets, "FRONT", status == "green")
++
++
++def _analyze_row_family(landmarks, width, height, exercise):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW FULL BODY", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    eid = LEFT_ELBOW if side == "LEFT" else RIGHT_ELBOW
++    wid = LEFT_WRIST if side == "LEFT" else RIGHT_WRIST
++    shoulder = xy(landmarks, sid, width, height)
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    ankle = xy(landmarks, aid, width, height)
++    elbow = xy(landmarks, eid, width, height) if visible(landmarks, eid, 0.45) else None
++    wrist = xy(landmarks, wid, width, height) if visible(landmarks, wid, 0.45) else None
++    if elbow is None or wrist is None:
++        return FormResult("red", "KEEP SHOULDER, ELBOW AND WRIST VISIBLE", 0, {}, [], [], "SIDE", False)
++    torso_angle = angle((shoulder[0], shoulder[1] - max(distance(shoulder, hip), 1)), shoulder, hip)
++    elbow_angle = angle(shoulder, elbow, wrist)
++    angles = {k: v for k, v in (("torso_angle", torso_angle), ("elbow", elbow_angle)) if v is not None}
++    pipes = [(shoulder, elbow, "green"), (elbow, wrist, "green"), (hip, knee, "green"), (knee, ankle, "green")]
++    status, score = "green", 97
++    message = f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD"
++    targets = []
++    minimum = 105 if exercise in {"seated_cable_row", "chest_supported_row", "machine_row", "face_pull"} else 92
++    if torso_angle is not None and torso_angle < minimum:
++        status, score, message = "yellow", 74, "KEEP A CONTROLLED BACK POSITION"
++        targets.append((shoulder, (hip[0], shoulder[1]), "BACK CONTROL"))
++    if elbow_angle is not None and elbow_angle > 170:
++        status, score, message = "yellow", min(score, 78), "PULL WITH THE ELBOWS"
++        targets.append((elbow, (shoulder[0], elbow[1]), "DRIVE ELBOW BACK"))
++    return FormResult(status, message, score, angles, pipes, targets, "SIDE", status == "green")
++
++
++def _analyze_leg_press_family(landmarks, width, height, exercise):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW FULL LEG", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    shoulder = xy(landmarks, sid, width, height)
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    ankle = xy(landmarks, aid, width, height)
++    knee_angle = angle(hip, knee, ankle)
++    angles = {"knee": knee_angle} if knee_angle is not None else {}
++    pipes = [(shoulder, hip, "green"), (hip, knee, "green"), (knee, ankle, "green")]
++    status, score, message, targets = "green", 96, f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD", []
++    if knee_angle is not None and knee_angle < 55:
++        status, score, message = "yellow", 72, "CONTROL DEPTH AND KEEP KNEES ALIGNED"
++        targets.append((knee, (ankle[0], knee[1]), "KNEE TRACK"))
++    return FormResult(status, message, score, angles, pipes, targets, "SIDE", status == "green")
++
++
++def _analyze_hinge_family(landmarks, width, height, exercise):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW FULL BODY", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    shoulder = xy(landmarks, sid, width, height)
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    ankle = xy(landmarks, aid, width, height)
++    knee_angle = angle(hip, knee, ankle)
++    torso_angle = angle((hip[0], hip[1] - max(distance(hip, shoulder), 1)), hip, shoulder)
++    angles = {k: v for k, v in (("knee", knee_angle), ("torso_angle", torso_angle)) if v is not None}
++    pipes = [(shoulder, hip, "green"), (hip, knee, "green"), (knee, ankle, "green")]
++    status, score, message, targets = "green", 97, f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD", []
++    if knee_angle is not None and knee_angle < 145:
++        status, score, message = "yellow", 77, "KEEP A SOFT KNEE BEND"
++        targets.append((knee, (ankle[0], knee[1]), "SOFT KNEE"))
++    if torso_angle is not None and torso_angle < 70:
++        status, score, message = "red", 52, "KEEP YOUR SPINE CONTROLLED"
++        targets.append((shoulder, (hip[0], shoulder[1]), "CHEST CONTROL"))
++    return FormResult(status, message, score, angles, pipes, targets, "SIDE", status == "green")
++
++
++def _analyze_leg_curl_family(landmarks, width, height, exercise):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW FULL LEG", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    ankle = xy(landmarks, aid, width, height)
++    knee_angle = angle(hip, knee, ankle)
++    angles = {"knee": knee_angle} if knee_angle is not None else {}
++    pipes = [(hip, knee, "green"), (knee, ankle, "green")]
++    status, score, message, targets = "green", 96, f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD", []
++    if knee_angle is not None and knee_angle < 25:
++        status, score, message = "yellow", 75, "CONTROL THE CURL RANGE"
++    return FormResult(status, message, score, angles, pipes, targets, "SIDE", status == "green")
++
++
++def _analyze_hip_thrust_family(landmarks, width, height, exercise):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW FULL BODY", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    shoulder = xy(landmarks, sid, width, height)
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    ankle = xy(landmarks, aid, width, height)
++    hip_angle = angle(shoulder, hip, knee)
++    knee_angle = angle(hip, knee, ankle)
++    angles = {k: v for k, v in (("hip", hip_angle), ("knee", knee_angle)) if v is not None}
++    pipes = [(shoulder, hip, "green"), (hip, knee, "green"), (knee, ankle, "green")]
++    status, score, message, targets = "green", 97, f"{EXERCISE_METADATA.get(exercise, {}).get('name', exercise).upper()} FORM GOOD", []
++    if hip_angle is not None and hip_angle > 178:
++        status, score, message = "yellow", 74, "DON'T OVERARCH YOUR LOWER BACK"
++    return FormResult(status, message, score, angles, pipes, targets, "SIDE", status == "green")
++
++
++def _analyze_crunch_family(landmarks, width, height, exercise="crunch"):
++    best = _best_side_pose(landmarks, width, height)
++    if not best:
++        return FormResult("red", "TURN SIDEWAYS AND SHOW TORSO", 0, {}, [], [], "SIDE", False)
++    _, side, sid, hid, kid, aid = best
++    shoulder = xy(landmarks, sid, width, height)
++    hip = xy(landmarks, hid, width, height)
++    knee = xy(landmarks, kid, width, height)
++    hip_angle = angle(shoulder, hip, knee)
++    angles = {"hip": hip_angle} if hip_angle is not None else {}
++    pipes = [(shoulder, hip, "green"), (hip, knee, "green")]
++    status, score, message = "green", 96, "CRUNCH FORM GOOD"
++    if hip_angle is not None and hip_angle < 45:
++        status, score, message = "yellow", 76, "LIFT WITH CONTROL — DON'T PULL YOUR NECK"
++    return FormResult(status, message, score, angles, pipes, [], "SIDE", status == "green")
++
++
+ # ============================================================
+ # EXPANDED EXERCISE SUPPORT — CONSERVATIVE FAMILY ROUTER
+ # ============================================================
+@@ -2671,6 +2844,12 @@
+         "close_grip_bench_press", "push_up_wide_grip", "push_up_diamond",
+         "incline_push_up", "decline_push_up", "chest_press_machine",
+         "cable_crossover", "low_cable_crossover",
++        "pull_up", "chin_up", "assisted_pull_up", "lat_pulldown", "close_grip_lat_pulldown",
++        "seated_cable_row", "chest_supported_row", "barbell_row", "pendlay_row", "t_bar_row",
++        "single_arm_dumbbell_row", "machine_row", "face_pull",
++        "leg_press", "hack_squat", "front_squat", "goblet_squat", "bulgarian_split_squat",
++        "romanian_deadlift", "stiff_leg_deadlift", "good_morning", "leg_curl", "seated_leg_curl",
++        "hip_thrust", "barbell_hip_thrust", "crunch",
+     }:
+         routed = _run_equivalent(exercise, landmarks, width, height)
+         if routed is None:
+@@ -2778,6 +2957,28 @@
+ 
+     if exercise == "low_cable_crossover":
+         return finish(analyze_low_cable_crossover(landmarks, width, height))
++
++    if exercise in {"pull_up", "chin_up", "assisted_pull_up", "lat_pulldown", "close_grip_lat_pulldown"}:
++        return finish(_analyze_vertical_pull(landmarks, width, height, exercise))
++
++    if exercise in {"seated_cable_row", "chest_supported_row", "barbell_row", "pendlay_row", "t_bar_row",
++                    "single_arm_dumbbell_row", "machine_row", "face_pull"}:
++        return finish(_analyze_row_family(landmarks, width, height, exercise))
++
++    if exercise in {"leg_press", "hack_squat", "front_squat", "goblet_squat", "bulgarian_split_squat"}:
++        return finish(_analyze_leg_press_family(landmarks, width, height, exercise))
++
++    if exercise in {"romanian_deadlift", "stiff_leg_deadlift", "good_morning"}:
++        return finish(_analyze_hinge_family(landmarks, width, height, exercise))
++
++    if exercise in {"leg_curl", "seated_leg_curl"}:
++        return finish(_analyze_leg_curl_family(landmarks, width, height, exercise))
++
++    if exercise in {"hip_thrust", "barbell_hip_thrust"}:
++        return finish(_analyze_hip_thrust_family(landmarks, width, height, exercise))
++
++    if exercise == "crunch":
++        return finish(_analyze_crunch_family(landmarks, width, height, exercise))
+ 
+     return finish(FormResult(
+         "yellow",
+@@ -3111,6 +3312,23 @@
+ 
+         if exercise == "reverse_lunge":
+             return self._count_cycle(angles.get("knee"), 105, 150, "high_low_high")
++
++        if exercise in {"pull_up", "chin_up", "assisted_pull_up", "lat_pulldown", "close_grip_lat_pulldown"}:
++            return self._count_cycle(angles.get("elbow"), 105, 155, "high_low_high")
++
++        if exercise in {"seated_cable_row", "chest_supported_row", "barbell_row", "pendlay_row",
++                        "t_bar_row", "single_arm_dumbbell_row", "machine_row", "face_pull"}:
++            return self._count_cycle(angles.get("elbow"), 85, 150, "high_low_high")
++
++        if exercise in {"leg_press", "hack_squat", "front_squat", "goblet_squat", "bulgarian_split_squat",
++                        "romanian_deadlift", "stiff_leg_deadlift", "good_morning", "leg_curl", "seated_leg_curl"}:
++            return self._count_cycle(angles.get("knee"), 95, 155, "high_low_high")
++
++        if exercise in {"hip_thrust", "barbell_hip_thrust"}:
++            return self._count_cycle(angles.get("hip"), 105, 155, "low_high_low")
++
++        if exercise == "crunch":
++            return self._count_cycle(angles.get("hip"), 55, 115, "high_low_high")
+ 
+         # Generic family counter for expanded exercise library.
+         # Dedicated exercises above always win; these conservative signals are
+@@ -3329,6 +3547,28 @@
+     if exercise == "chest_fly":
+         return ["KEEP SHOULDERS STABLE", "CONTROL OPEN AND CLOSE"]
+ 
++    if exercise in {"pull_up", "chin_up", "assisted_pull_up", "lat_pulldown", "close_grip_lat_pulldown"}:
++        return ["KEEP CHEST CONTROLLED", "DRIVE ELBOWS DOWN", "AVOID TORSO SWING"]
++
++    if exercise in {"seated_cable_row", "chest_supported_row", "barbell_row", "pendlay_row",
++                    "t_bar_row", "single_arm_dumbbell_row", "machine_row", "face_pull"}:
++        return ["KEEP BACK CONTROLLED", "DRIVE ELBOWS BACK", "CONTROL THE RETURN"]
++
++    if exercise in {"leg_press", "hack_squat", "front_squat", "goblet_squat", "bulgarian_split_squat"}:
++        return ["KEEP KNEES ALIGNED", "CONTROL THE DEPTH", "PRESS WITH CONTROL"]
++
++    if exercise in {"romanian_deadlift", "stiff_leg_deadlift", "good_morning"}:
++        return ["HINGE AT THE HIPS", "KEEP BACK NEUTRAL", "KEEP KNEES SOFT"]
++
++    if exercise in {"leg_curl", "seated_leg_curl"}:
++        return ["KEEP HIPS STABLE", "CONTROL THE CURL", "CONTROL THE RETURN"]
++
++    if exercise in {"hip_thrust", "barbell_hip_thrust"}:
++        return ["DRIVE THROUGH THE FEET", "EXTEND HIPS", "DON'T OVERARCH"]
++
++    if exercise == "crunch":
++        return ["KEEP NECK RELAXED", "LIFT WITH YOUR CORE", "CONTROL THE RETURN"]
++
+     return [
+         "FOLLOW THE YELLOW GUIDE",
+         "KEEP YOUR FORM CONTROLLED",

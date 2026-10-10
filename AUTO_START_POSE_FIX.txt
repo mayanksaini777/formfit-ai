@@ -1,0 +1,12 @@
+FORMFIT AUTO-START POSE FIX
+============================
+
+The web app now automatically starts the local formfit_api.py pose service
+when /api/analyze_landmarks cannot reach http://127.0.0.1:5050.
+
+No frontend files, CSS, pipe rendering, exercise rules, or pose-engine logic
+were changed.
+
+For local use, start app.py as usual. The AI service will be started on demand.
+The existing start_formfit_all.bat remains valid and can still start both
+services in separate windows.

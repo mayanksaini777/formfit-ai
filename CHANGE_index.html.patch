@@ -1,0 +1,21 @@
+--- index.html (before)
++++ index.html (after)
+@@ -121,6 +121,18 @@
+             <div class="form-section"><label>Exercises / day</label><input id="perDay" type="number" min="3" max="10" value="6"></div>
+           </div>
+           <div class="form-section">
++            <label for="workoutSplit">Choose your workout split</label>
++            <select id="workoutSplit">
++              <option value="auto">Let FormFit decide (recommended)</option>
++              <option value="push_pull_legs">Push • Pull • Legs</option>
++              <option value="full_body">Full Body</option>
++              <option value="upper_lower">Upper • Lower</option>
++              <option value="one_body_part">One body part a day</option>
++              <option value="bro_split">Chest • Back • Shoulders • Arms • Legs</option>
++            </select>
++            <small>FormFit will adapt the split to your selected training days.</small>
++          </div>
++          <div class="form-section">
+             <label>Available equipment</label>
+             <div class="choice-grid compact" id="equipmentChoices">
+               <button type="button" class="choice selected" data-value="Bodyweight">Bodyweight</button>

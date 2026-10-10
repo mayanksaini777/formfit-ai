@@ -1,0 +1,38 @@
+FORMFIT AI WORKOUT — REASONING + TREND-AWARE V3
+
+Base: user-supplied 48a4bf67-38e2-4bab-beed-70c4d10064f2.zip
+
+Only these existing files were modified:
+- formfit_v2/recommendation_engine.py
+- formfit_v2/app.js
+- formfit_v2/index.html
+
+All other files from the supplied ZIP were preserved byte-for-byte.
+
+Features added:
+- Goal-reason input (the "why" behind the user's goal)
+- Training style selector
+- Workout time preference
+- Reason-aware exercise scoring
+- Light 2026 trend-aware tie-breaker layer
+- Human-readable "Why FormFit chose this" plan explanations
+- Per-exercise "Why" explanations
+- Trend signals never override user goal, experience, equipment or preferences
+
+Evidence basis used for the trend layer:
+- ACSM 2026 fitness trends: wearable technology, traditional strength training,
+  data-driven technology, functional fitness, balance/core, and related trends.
+- WHO adult activity guidance: regular aerobic activity plus muscle-strengthening
+  on 2+ days/week.
+- ACSM 2026 resistance-training position stand: goal-specific training and
+  personalization.
+
+Validation:
+- recommendation_engine.py syntax: PASS
+- app.py syntax: PASS (unchanged)
+- pose_engine.py syntax: PASS (unchanged)
+- formfit_api.py syntax: PASS (unchanged)
+- app.js syntax: PASS
+- HTML duplicate ID scan: PASS
+- Recommendation smoke tests: PASS (multiple goals/styles/splits)
+- All source files outside the 3 listed above preserved from the supplied ZIP.

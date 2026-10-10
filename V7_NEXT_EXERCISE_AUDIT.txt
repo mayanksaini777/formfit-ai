@@ -1,0 +1,16 @@
+FORMFIT V7 — NEXT EXERCISE
+Target: pec_deck
+
+Change scope:
+- pose_engine.py only
+- Removed pec_deck from generic equivalent alias map.
+- Added dedicated analyze_pec_deck() using the already validated chest-fly geometry and exercise-specific feedback.
+- Added explicit dispatch branch.
+
+Checks:
+- Python AST parse: PASS
+- JavaScript app.js syntax: PASS
+- Exercise metadata contains pec_deck: PASS
+- Active files changed: pose_engine.py only
+- Existing chest_fly analyzer unchanged.
+- No camera/FPS/UI/backend/recommendation changes.

@@ -1,0 +1,22 @@
+FORMFIT AI — Workout Intelligence v1
+
+Base: user-uploaded formfit_v2 project.
+
+Implemented:
+- Persistent per-user workout preferences: favorites, dislikes, avoid list, notes.
+- Natural-language workout comments learn known exercise preferences.
+- Recommendation engine uses learned preferences and hard-filters explicit avoids.
+- Generated workout cards support Favorite, Not for me, Replace, and inline Sets/Reps/Rest edits.
+- Current workout plans can be saved/favorited, reopened, modified, updated, and deleted.
+- Existing Form Checker selection remains the same when clicking an exercise.
+- Existing camera/MediaPipe/form/reps path was not changed by this update.
+
+Verification:
+- app.py syntax: PASS
+- recommendation_engine.py syntax: PASS
+- app.js Node syntax check: PASS
+- key existing index.html IDs retained: PASS
+- recommendation behavior check: PASS (avoided exercises excluded; favorite scoring applied)
+- changes limited to app.py, app.js, recommendation_engine.py, styles.css plus this audit note.
+
+Sensitive local files (.formfit_secret_key, local SQLite DB, .git, pycache) are NOT included in the safe source ZIP.

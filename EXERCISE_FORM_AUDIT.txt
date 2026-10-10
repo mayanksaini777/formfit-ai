@@ -1,0 +1,50 @@
+FORMFIT EXERCISE FORM AUDIT
+==========================
+
+Every READY/BASIC exercise in the active database has an explicit exercise ID in pose_engine.py analyze_exercise().
+No READY/BASIC exercise falls through to EXERCISE RULE NOT READY.
+
+READY/BASIC COUNT: 36
+
+bicep_curls -> analyze_bicep
+squat -> analyze_squat
+shoulder_press -> analyze_shoulder_press
+lateral_shoulder_raises -> analyze_lateral
+tricep_extension -> analyze_tricep
+lunges -> analyze_lunge
+push_up -> analyze_pushup
+dumbbell_row -> analyze_row
+sit_up -> analyze_situp
+jumping_jack -> analyze_jumping_jack
+bench_press -> analyze_bench_press
+deadlift -> analyze_deadlift
+front_raise -> analyze_front_raise
+hammer_curl -> analyze_hammer_curl
+calf_raise -> analyze_calf_raise
+glute_bridge -> analyze_glute_bridge
+plank -> analyze_plank
+mountain_climber -> analyze_mountain_climber
+burpee -> analyze_burpee
+step_up -> analyze_step_up
+reverse_lunge -> analyze_reverse_lunge
+chest_fly -> analyze_chest_fly
+incline_dumbbell_press -> analyze_incline_dumbbell_press
+decline_bench_press -> analyze_decline_bench_press
+incline_bench_press -> analyze_incline_bench_press
+dumbbell_bench_press -> analyze_dumbbell_bench_press
+close_grip_bench_press -> analyze_close_grip_bench_press
+push_up_wide_grip -> analyze_push_up_wide_grip
+push_up_diamond -> analyze_push_up_diamond
+incline_push_up -> analyze_incline_push_up
+decline_push_up -> analyze_decline_push_up
+chest_press_machine -> analyze_chest_press_machine
+cable_crossover -> analyze_cable_fly_pattern
+low_cable_crossover -> analyze_cable_fly_pattern
+lat_pulldown -> analyze_lat_pulldown
+close_grip_lat_pulldown -> analyze_close_grip_lat_pulldown
+
+Key corrections in this build:
+- Lat Pulldown and Close Grip Lat Pulldown now have dedicated analyzers and rep signals.
+- Cable Crossover and Low Cable Crossover no longer reuse Bench Press analysis; they use cable-fly wrist/arm geometry.
+- Lat Pulldown demos are mapped to an actual Lat Pulldown reference video.
+- Existing exercise-family reuse (e.g. reverse lunge/lunge and press variants/bench geometry) is intentional movement-family sharing, not accidental exercise-ID dispatch.

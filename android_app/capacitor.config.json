@@ -1,0 +1,6 @@
+{
+  "appId": "com.formfit.ai",
+  "appName": "FormFit AI",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
